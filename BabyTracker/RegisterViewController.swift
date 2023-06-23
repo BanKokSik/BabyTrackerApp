@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import SnapKit
 
 class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+            
         initialize()
     }
     
     
     private func initialize() {
         view.backgroundColor = UIColor.white
-        
-        
+
+
         let createpProfileButton = UIButton(type: .system)
         createpProfileButton.backgroundColor = UIColor.rgb(red: 207, green: 104, blue: 255)
         createpProfileButton.layer.cornerRadius = 10
@@ -32,7 +34,7 @@ class RegisterViewController: UIViewController {
             make.top.equalToSuperview().inset(286)
         }
         let enterCodeButton = UIButton(type: .system)
-        
+
         enterCodeButton.setTitle("Ввести код", for: .normal)
         enterCodeButton.setTitleColor(UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1), for: .normal)
         enterCodeButton.backgroundColor = UIColor.white
@@ -47,10 +49,10 @@ class RegisterViewController: UIViewController {
             make.top.equalTo(createpProfileButton).inset(100)
         }
         let restoreCloudButton = UIButton(type: .system)
-        
+
         restoreCloudButton.setTitle("Восстановить из облака", for: .normal)
         restoreCloudButton.setTitleColor(.black, for: .normal)
-        
+
         view.addSubview(restoreCloudButton)
         restoreCloudButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -58,8 +60,8 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(22)
             make.top.equalTo(enterCodeButton).inset(100)
         }
-        
-        
+
+
     }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 808C0B462A45D4DE00AEC365 /* SnapKit */; };
+		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
 		90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */; };
 		90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */; };
@@ -15,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		90E2CBB52A45B4CF00B116BE /* BabyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 				90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */,
 				90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */,
 				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
+				808C0B482A45D51000AEC365 /* Extension.swift */,
 				90E2CBC12A45B4D000B116BE /* Assets.xcassets */,
 				90E2CBC32A45B4D000B116BE /* LaunchScreen.storyboard */,
 				90E2CBC62A45B4D000B116BE /* Info.plist */,
@@ -80,6 +85,9 @@
 			dependencies = (
 			);
 			name = BabyTracker;
+			packageProductDependencies = (
+				808C0B462A45D4DE00AEC365 /* SnapKit */,
+			);
 			productName = BabyTracker;
 			productReference = 90E2CBB52A45B4CF00B116BE /* BabyTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -91,6 +99,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
@@ -108,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 90E2CBAC2A45B4CF00B116BE;
+			packageReferences = (
+				808C0B452A45D4DE00AEC365 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 90E2CBB62A45B4CF00B116BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +151,7 @@
 				90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
+				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +295,6 @@
 				INFOPLIST_FILE = BabyTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,7 +322,6 @@
 				INFOPLIST_FILE = BabyTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -346,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		808C0B452A45D4DE00AEC365 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		808C0B462A45D4DE00AEC365 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 808C0B452A45D4DE00AEC365 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90E2CBAD2A45B4CF00B116BE /* Project object */;
 }
