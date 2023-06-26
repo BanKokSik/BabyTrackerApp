@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F794D228B0EC88F581AE026 /* Pods_BabyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */; };
 		808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 808C0B462A45D4DE00AEC365 /* SnapKit */; };
 		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
+		906B26D22A49FAC700E946D2 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */; };
+		906B26D32A49FACA00E946D2 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */; };
+		906B26D42A49FACD00E946D2 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */; };
+		906B26D52A49FAD000E946D2 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */; };
+		906B26D62A49FAD400E946D2 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */; };
+		906B26D72A49FAD700E946D2 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
 		90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */; };
 		90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */; };
 		90E2CBC22A45B4D000B116BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E2CBC12A45B4D000B116BE /* Assets.xcassets */; };
 		90E2CBC52A45B4D000B116BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E2CBC32A45B4D000B116BE /* LaunchScreen.storyboard */; };
+		90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EE92442A49BB7A003D4471 /* Fonts.swift */; };
+		90EE92472A49BC51003D4471 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EE92462A49BC51003D4471 /* R.generated.swift */; };
+		90EE924A2A49D95C003D4471 /* Teaspoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92492A49D95C003D4471 /* Teaspoon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +35,18 @@
 		90E2CBC12A45B4D000B116BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E2CBC42A45B4D000B116BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E2CBC62A45B4D000B116BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90EE92442A49BB7A003D4471 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		90EE92462A49BC51003D4471 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		90EE92492A49D95C003D4471 /* Teaspoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Teaspoon.ttf; path = ../../../../Downloads/Teaspoon.ttf; sourceTree = "<group>"; };
+		90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-ExtraBold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
+		90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-SemiBold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Regular.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Bold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Medium.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Light.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		A0BECB25B5C3D3F4F7A9BBF5 /* Pods-BabyTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyTracker.debug.xcconfig"; path = "Target Support Files/Pods-BabyTracker/Pods-BabyTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		AD932817A05EFCBCCD2674C6 /* Pods-BabyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyTracker.release.xcconfig"; path = "Target Support Files/Pods-BabyTracker/Pods-BabyTracker.release.xcconfig"; sourceTree = "<group>"; };
+		BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +55,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */,
+				3F794D228B0EC88F581AE026 /* Pods_BabyTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10568A6592C5F337351E30D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0BECB25B5C3D3F4F7A9BBF5 /* Pods-BabyTracker.debug.xcconfig */,
+				AD932817A05EFCBCCD2674C6 /* Pods-BabyTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		90E2CBAC2A45B4CF00B116BE = {
 			isa = PBXGroup;
 			children = (
 				90E2CBB72A45B4CF00B116BE /* BabyTracker */,
 				90E2CBB62A45B4CF00B116BE /* Products */,
+				10568A6592C5F337351E30D6 /* Pods */,
+				AB0758CC3829F7271B9ACE4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +92,8 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				90EE92462A49BC51003D4471 /* R.generated.swift */,
+				90EE92432A49BB6B003D4471 /* Resources */,
 				90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */,
 				90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */,
 				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
@@ -69,6 +105,37 @@
 			path = BabyTracker;
 			sourceTree = "<group>";
 		};
+		90EE92432A49BB6B003D4471 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90EE92442A49BB7A003D4471 /* Fonts.swift */,
+				90EE92482A49D8BE003D4471 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		90EE92482A49D8BE003D4471 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */,
+				90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */,
+				90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */,
+				90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */,
+				90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */,
+				90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */,
+				90EE92492A49D95C003D4471 /* Teaspoon.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AB0758CC3829F7271B9ACE4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90E2CBC92A45B4D000B116BE /* Build configuration list for PBXNativeTarget "BabyTracker" */;
 			buildPhases = (
+				A9810F3A1CAB61DECD2757F5 /* [CP] Check Pods Manifest.lock */,
+				906D72102A49B96A00303644 /* ShellScript */,
 				90E2CBB12A45B4CF00B116BE /* Sources */,
 				90E2CBB22A45B4CF00B116BE /* Frameworks */,
 				90E2CBB32A45B4CF00B116BE /* Resources */,
+				D0ACD107BD26180B0DF5DC82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +206,80 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906B26D62A49FAD400E946D2 /* Gilroy-ExtraBold.ttf in Resources */,
 				90E2CBC52A45B4D000B116BE /* LaunchScreen.storyboard in Resources */,
+				906B26D42A49FACD00E946D2 /* Gilroy-Medium.ttf in Resources */,
+				906B26D72A49FAD700E946D2 /* Gilroy-Bold.ttf in Resources */,
 				90E2CBC22A45B4D000B116BE /* Assets.xcassets in Resources */,
+				90EE924A2A49D95C003D4471 /* Teaspoon.ttf in Resources */,
+				906B26D32A49FACA00E946D2 /* Gilroy-SemiBold.ttf in Resources */,
+				906B26D52A49FAD000E946D2 /* Gilroy-Light.ttf in Resources */,
+				906B26D22A49FAC700E946D2 /* Gilroy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		906D72102A49B96A00303644 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		A9810F3A1CAB61DECD2757F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BabyTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0ACD107BD26180B0DF5DC82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BabyTracker/Pods-BabyTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BabyTracker/Pods-BabyTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BabyTracker/Pods-BabyTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90E2CBB12A45B4CF00B116BE /* Sources */ = {
@@ -149,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */,
+				90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
+				90EE92472A49BC51003D4471 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +425,7 @@
 		};
 		90E2CBCA2A45B4D000B116BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0BECB25B5C3D3F4F7A9BBF5 /* Pods-BabyTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +453,7 @@
 		};
 		90E2CBCB2A45B4D000B116BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD932817A05EFCBCCD2674C6 /* Pods-BabyTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
