@@ -13,12 +13,16 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 struct _R {
   let bundle: Foundation.Bundle
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var font: font { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
@@ -48,15 +52,24 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 15 colors.
+  /// This `_R.color` struct is generated, and contains static references to 31 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
 
+    /// Color `Alabaster`.
+    var alabaster: RswiftResources.ColorResource { .init(name: "Alabaster", path: [], bundle: bundle) }
+
+    /// Color `Bittersweet`.
+    var bittersweet: RswiftResources.ColorResource { .init(name: "Bittersweet", path: [], bundle: bundle) }
+
     /// Color `BittersweetLight`.
     var bittersweetLight: RswiftResources.ColorResource { .init(name: "BittersweetLight", path: [], bundle: bundle) }
+
+    /// Color `Black`.
+    var black: RswiftResources.ColorResource { .init(name: "Black", path: [], bundle: bundle) }
 
     /// Color `BlueChalk`.
     var blueChalk: RswiftResources.ColorResource { .init(name: "BlueChalk", path: [], bundle: bundle) }
@@ -73,14 +86,44 @@ struct _R {
     /// Color `Conifer`.
     var conifer: RswiftResources.ColorResource { .init(name: "Conifer", path: [], bundle: bundle) }
 
+    /// Color `DodgerBlue`.
+    var dodgerBlue: RswiftResources.ColorResource { .init(name: "DodgerBlue", path: [], bundle: bundle) }
+
     /// Color `DodgerBlueLight`.
     var dodgerBlueLight: RswiftResources.ColorResource { .init(name: "DodgerBlueLight", path: [], bundle: bundle) }
 
     /// Color `EggSour`.
     var eggSour: RswiftResources.ColorResource { .init(name: "EggSour", path: [], bundle: bundle) }
 
+    /// Color `Heliotrope`.
+    var heliotrope: RswiftResources.ColorResource { .init(name: "Heliotrope", path: [], bundle: bundle) }
+
+    /// Color `HeliotropeLight`.
+    var heliotropeLight: RswiftResources.ColorResource { .init(name: "HeliotropeLight", path: [], bundle: bundle) }
+
+    /// Color `HeliotropeLighther`.
+    var heliotropeLighther: RswiftResources.ColorResource { .init(name: "HeliotropeLighther", path: [], bundle: bundle) }
+
+    /// Color `MacaroniAndCheese`.
+    var macaroniAndCheese: RswiftResources.ColorResource { .init(name: "MacaroniAndCheese", path: [], bundle: bundle) }
+
+    /// Color `Mauve`.
+    var mauve: RswiftResources.ColorResource { .init(name: "Mauve", path: [], bundle: bundle) }
+
+    /// Color `Mercury`.
+    var mercury: RswiftResources.ColorResource { .init(name: "Mercury", path: [], bundle: bundle) }
+
+    /// Color `MySin`.
+    var mySin: RswiftResources.ColorResource { .init(name: "MySin", path: [], bundle: bundle) }
+
     /// Color `MySinLight`.
     var mySinLight: RswiftResources.ColorResource { .init(name: "MySinLight", path: [], bundle: bundle) }
+
+    /// Color `Nobel`.
+    var nobel: RswiftResources.ColorResource { .init(name: "Nobel", path: [], bundle: bundle) }
+
+    /// Color `RazzleDazzleRose`.
+    var razzleDazzleRose: RswiftResources.ColorResource { .init(name: "RazzleDazzleRose", path: [], bundle: bundle) }
 
     /// Color `RazzleDazzleRoseLight`.
     var razzleDazzleRoseLight: RswiftResources.ColorResource { .init(name: "RazzleDazzleRoseLight", path: [], bundle: bundle) }
@@ -88,14 +131,34 @@ struct _R {
     /// Color `SandyBeach`.
     var sandyBeach: RswiftResources.ColorResource { .init(name: "SandyBeach", path: [], bundle: bundle) }
 
+    /// Color `Silver`.
+    var silver: RswiftResources.ColorResource { .init(name: "Silver", path: [], bundle: bundle) }
+
     /// Color `TorquoiseBlue`.
     var torquoiseBlue: RswiftResources.ColorResource { .init(name: "TorquoiseBlue", path: [], bundle: bundle) }
 
     /// Color `VividTangarine`.
     var vividTangarine: RswiftResources.ColorResource { .init(name: "VividTangarine", path: [], bundle: bundle) }
 
+    /// Color `White`.
+    var white: RswiftResources.ColorResource { .init(name: "White", path: [], bundle: bundle) }
+
+    /// Color `WildSand`.
+    var wildSand: RswiftResources.ColorResource { .init(name: "WildSand", path: [], bundle: bundle) }
+
     /// Color `YellowOrange`.
     var yellowOrange: RswiftResources.ColorResource { .init(name: "YellowOrange", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `Icon`.
+    var icon: RswiftResources.ImageResource { .init(name: "Icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `calendar`.
+    var calendar: RswiftResources.ImageResource { .init(name: "calendar", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.

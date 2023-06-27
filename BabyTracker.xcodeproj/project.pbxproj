@@ -16,6 +16,7 @@
 		906B26D52A49FAD000E946D2 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */; };
 		906B26D62A49FAD400E946D2 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */; };
 		906B26D72A49FAD700E946D2 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */; };
+		908887102A4A09E400B8F04C /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
 		90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */; };
 		90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		90E2CBB52A45B4CF00B116BE /* BabyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				90EE92432A49BB6B003D4471 /* Resources */,
 				90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */,
 				90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */,
+				9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */,
 				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
 				808C0B482A45D51000AEC365 /* Extension.swift */,
 				90E2CBC12A45B4D000B116BE /* Assets.xcassets */,
@@ -288,6 +291,7 @@
 			files = (
 				90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */,
 				90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */,
+				908887102A4A09E400B8F04C /* OnBoardingViewController.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
@@ -359,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -413,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
