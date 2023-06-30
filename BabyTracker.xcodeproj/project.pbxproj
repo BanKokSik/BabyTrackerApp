@@ -10,12 +10,12 @@
 		3F794D228B0EC88F581AE026 /* Pods_BabyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */; };
 		808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 808C0B462A45D4DE00AEC365 /* SnapKit */; };
 		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
-		906B26D22A49FAC700E946D2 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */; };
-		906B26D32A49FACA00E946D2 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */; };
-		906B26D42A49FACD00E946D2 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */; };
-		906B26D52A49FAD000E946D2 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */; };
-		906B26D62A49FAD400E946D2 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */; };
-		906B26D72A49FAD700E946D2 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */; };
+		9044D8A82A4B6F250058B2A0 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9044D8A42A4B6EA20058B2A0 /* Gilroy-Bold.ttf */; };
+		9044D8A92A4B6F280058B2A0 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9044D8A52A4B6EA20058B2A0 /* Gilroy-Light.ttf */; };
+		9044D8AA2A4B6F2A0058B2A0 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9044D8A62A4B6EA20058B2A0 /* Gilroy-Medium.ttf */; };
+		9044D8AB2A4B6F2D0058B2A0 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9044D8A32A4B6EA20058B2A0 /* Gilroy-Regular.ttf */; };
+		9044D8AC2A4B6F300058B2A0 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9044D8A72A4B6EA20058B2A0 /* Gilroy-SemiBold.ttf */; };
+		9044D8AE2A4C4BEB0058B2A0 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D8AD2A4C4BEB0058B2A0 /* PageViewController.swift */; };
 		908887102A4A09E400B8F04C /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
 		90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */; };
@@ -29,6 +29,12 @@
 
 /* Begin PBXFileReference section */
 		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9044D8A32A4B6EA20058B2A0 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Regular.ttf"; path = "../../../../../Downloads/gilroy 2/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		9044D8A42A4B6EA20058B2A0 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Bold.ttf"; path = "../../../../../Downloads/gilroy 2/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		9044D8A52A4B6EA20058B2A0 /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Light.ttf"; path = "../../../../../Downloads/gilroy 2/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		9044D8A62A4B6EA20058B2A0 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Medium.ttf"; path = "../../../../../Downloads/gilroy 2/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		9044D8A72A4B6EA20058B2A0 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-SemiBold.ttf"; path = "../../../../../Downloads/gilroy 2/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		9044D8AD2A4C4BEB0058B2A0 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		90E2CBB52A45B4CF00B116BE /* BabyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,14 +44,8 @@
 		90E2CBC42A45B4D000B116BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E2CBC62A45B4D000B116BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90EE92442A49BB7A003D4471 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		90EE92462A49BC51003D4471 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		90EE92492A49D95C003D4471 /* Teaspoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Teaspoon.ttf; path = ../../../../Downloads/Teaspoon.ttf; sourceTree = "<group>"; };
-		90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-ExtraBold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
-		90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-SemiBold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
-		90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Regular.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
-		90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Bold.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
-		90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Medium.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
-		90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Light.ttf"; path = "../../../../Downloads/gilroy/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		90EE92462A49BC51003D4471 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = BabyTracker/SupportingFiles/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		90EE92492A49D95C003D4471 /* Teaspoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Teaspoon.ttf; path = ../../../../../Downloads/Teaspoon.ttf; sourceTree = "<group>"; };
 		A0BECB25B5C3D3F4F7A9BBF5 /* Pods-BabyTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyTracker.debug.xcconfig"; path = "Target Support Files/Pods-BabyTracker/Pods-BabyTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AD932817A05EFCBCCD2674C6 /* Pods-BabyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyTracker.release.xcconfig"; path = "Target Support Files/Pods-BabyTracker/Pods-BabyTracker.release.xcconfig"; sourceTree = "<group>"; };
 		BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +73,59 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9067B00C2A4EF0FB005723EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9067B00D2A4EF11D005723EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9067B0112A4EF4C3005723EE /* Extensions */,
+				9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */,
+				9044D8AD2A4C4BEB0058B2A0 /* PageViewController.swift */,
+				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9067B00E2A4EF145005723EE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9067B00F2A4EF394005723EE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */,
+				90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9067B0102A4EF3BA005723EE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				90EE92462A49BC51003D4471 /* R.generated.swift */,
+				90E2CBC12A45B4D000B116BE /* Assets.xcassets */,
+				90E2CBC32A45B4D000B116BE /* LaunchScreen.storyboard */,
+				90E2CBC62A45B4D000B116BE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9067B0112A4EF4C3005723EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				808C0B482A45D51000AEC365 /* Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		90E2CBAC2A45B4CF00B116BE = {
 			isa = PBXGroup;
 			children = (
@@ -94,16 +147,12 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
-				90EE92462A49BC51003D4471 /* R.generated.swift */,
+				9067B00F2A4EF394005723EE /* App */,
+				9067B00E2A4EF145005723EE /* Presenter */,
+				9067B00D2A4EF11D005723EE /* View */,
+				9067B00C2A4EF0FB005723EE /* Model */,
+				9067B0102A4EF3BA005723EE /* SupportingFiles */,
 				90EE92432A49BB6B003D4471 /* Resources */,
-				90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */,
-				90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */,
-				9088870F2A4A09E400B8F04C /* OnBoardingViewController.swift */,
-				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
-				808C0B482A45D51000AEC365 /* Extension.swift */,
-				90E2CBC12A45B4D000B116BE /* Assets.xcassets */,
-				90E2CBC32A45B4D000B116BE /* LaunchScreen.storyboard */,
-				90E2CBC62A45B4D000B116BE /* Info.plist */,
 			);
 			path = BabyTracker;
 			sourceTree = "<group>";
@@ -120,12 +169,11 @@
 		90EE92482A49D8BE003D4471 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				90EE92522A49F97B003D4471 /* Gilroy-Bold.ttf */,
-				90EE924E2A49F97B003D4471 /* Gilroy-ExtraBold.ttf */,
-				90EE92542A49F97B003D4471 /* Gilroy-Light.ttf */,
-				90EE92532A49F97B003D4471 /* Gilroy-Medium.ttf */,
-				90EE92512A49F97B003D4471 /* Gilroy-Regular.ttf */,
-				90EE92502A49F97B003D4471 /* Gilroy-SemiBold.ttf */,
+				9044D8A42A4B6EA20058B2A0 /* Gilroy-Bold.ttf */,
+				9044D8A52A4B6EA20058B2A0 /* Gilroy-Light.ttf */,
+				9044D8A62A4B6EA20058B2A0 /* Gilroy-Medium.ttf */,
+				9044D8A32A4B6EA20058B2A0 /* Gilroy-Regular.ttf */,
+				9044D8A72A4B6EA20058B2A0 /* Gilroy-SemiBold.ttf */,
 				90EE92492A49D95C003D4471 /* Teaspoon.ttf */,
 			);
 			path = Fonts;
@@ -209,15 +257,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				906B26D62A49FAD400E946D2 /* Gilroy-ExtraBold.ttf in Resources */,
 				90E2CBC52A45B4D000B116BE /* LaunchScreen.storyboard in Resources */,
-				906B26D42A49FACD00E946D2 /* Gilroy-Medium.ttf in Resources */,
-				906B26D72A49FAD700E946D2 /* Gilroy-Bold.ttf in Resources */,
+				9044D8AC2A4B6F300058B2A0 /* Gilroy-SemiBold.ttf in Resources */,
+				9044D8AA2A4B6F2A0058B2A0 /* Gilroy-Medium.ttf in Resources */,
 				90E2CBC22A45B4D000B116BE /* Assets.xcassets in Resources */,
 				90EE924A2A49D95C003D4471 /* Teaspoon.ttf in Resources */,
-				906B26D32A49FACA00E946D2 /* Gilroy-SemiBold.ttf in Resources */,
-				906B26D52A49FAD000E946D2 /* Gilroy-Light.ttf in Resources */,
-				906B26D22A49FAC700E946D2 /* Gilroy-Regular.ttf in Resources */,
+				9044D8A92A4B6F280058B2A0 /* Gilroy-Light.ttf in Resources */,
+				9044D8AB2A4B6F2D0058B2A0 /* Gilroy-Regular.ttf in Resources */,
+				9044D8A82A4B6F250058B2A0 /* Gilroy-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +343,7 @@
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
 				90EE92472A49BC51003D4471 /* R.generated.swift in Sources */,
+				9044D8AE2A4C4BEB0058B2A0 /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTMA39LQ82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BabyTracker/Info.plist;
+				INFOPLIST_FILE = BabyTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -465,7 +513,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTMA39LQ82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BabyTracker/Info.plist;
+				INFOPLIST_FILE = BabyTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
