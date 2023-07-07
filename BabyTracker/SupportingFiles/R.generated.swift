@@ -12,6 +12,7 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+  var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
@@ -19,6 +20,15 @@ struct _R {
   var file: file { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func string(bundle: Foundation.Bundle) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: nil)
+  }
+  func string(locale: Foundation.Locale) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: locale)
+  }
+  func string(preferredLanguages: [String], locale: Locale? = nil) -> string {
+    .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
+  }
   func color(bundle: Foundation.Bundle) -> color {
     .init(bundle: bundle)
   }
@@ -49,6 +59,68 @@ struct _R {
       func makeIterator() -> IndexingIterator<[String]> {
         [new].makeIterator()
       }
+    }
+  }
+
+  /// This `_R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    let bundle: Foundation.Bundle
+    let preferredLanguages: [String]?
+    let locale: Locale?
+    var launchScreen: launchScreen { .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale)) }
+    var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
+
+    func launchScreen(preferredLanguages: [String]) -> launchScreen {
+      .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func localizable(preferredLanguages: [String]) -> localizable {
+      .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
+    }
+
+
+    /// This `_R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      let source: RswiftResources.StringResource.Source
+    }
+
+    /// This `_R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    struct localizable {
+      let source: RswiftResources.StringResource.Source
+
+      /// en translation: Next
+      ///
+      /// Key: NextButton
+      ///
+      /// Locales: en, ru
+      var nextButton: RswiftResources.StringResource { .init(key: "NextButton", tableName: "Localizable", source: source, developmentValue: "Next", comment: nil) }
+
+      /// en translation: Plan the development
+      ///
+      /// Key: OnbordingLabelPage1
+      ///
+      /// Locales: en, ru
+      var onbordingLabelPage1: RswiftResources.StringResource { .init(key: "OnbordingLabelPage1", tableName: "Localizable", source: source, developmentValue: "Plan the development", comment: nil) }
+
+      /// en translation: Save moments
+      ///
+      /// Key: OnbordingLabelPage2
+      ///
+      /// Locales: en, ru
+      var onbordingLabelPage2: RswiftResources.StringResource { .init(key: "OnbordingLabelPage2", tableName: "Localizable", source: source, developmentValue: "Save moments", comment: nil) }
+
+      /// en translation: Monitor the indicators
+      ///
+      /// Key: OnbordingLabelPage3
+      ///
+      /// Locales: en, ru
+      var onbordingLabelPage3: RswiftResources.StringResource { .init(key: "OnbordingLabelPage3", tableName: "Localizable", source: source, developmentValue: "Monitor the indicators", comment: nil) }
+
+      /// en translation: Get recommendations
+      ///
+      /// Key: OnbordingLabelPage4
+      ///
+      /// Locales: en, ru
+      var onbordingLabelPage4: RswiftResources.StringResource { .init(key: "OnbordingLabelPage4", tableName: "Localizable", source: source, developmentValue: "Get recommendations", comment: nil) }
     }
   }
 
@@ -218,15 +290,12 @@ struct _R {
     }
   }
 
-  /// This `_R.font` struct is generated, and contains static references to 6 fonts.
+  /// This `_R.font` struct is generated, and contains static references to 5 fonts.
   struct font: Sequence {
     let bundle: Foundation.Bundle
 
     /// Font `Gilroy-Bold`.
     var gilroyBold: RswiftResources.FontResource { .init(name: "Gilroy-Bold", bundle: bundle, filename: "Gilroy-Bold.ttf") }
-
-    /// Font `Gilroy-Light`.
-    var gilroyLight: RswiftResources.FontResource { .init(name: "Gilroy-Light", bundle: bundle, filename: "Gilroy-Light.ttf") }
 
     /// Font `Gilroy-Medium`.
     var gilroyMedium: RswiftResources.FontResource { .init(name: "Gilroy-Medium", bundle: bundle, filename: "Gilroy-Medium.ttf") }
@@ -241,7 +310,7 @@ struct _R {
     var teaspoon: RswiftResources.FontResource { .init(name: "teaspoon", bundle: bundle, filename: "Teaspoon.ttf") }
 
     func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
-      [gilroyBold, gilroyLight, gilroyMedium, gilroyRegular, gilroySemiBold, teaspoon].makeIterator()
+      [gilroyBold, gilroyMedium, gilroyRegular, gilroySemiBold, teaspoon].makeIterator()
     }
     func validate() throws {
       for font in self {
@@ -250,15 +319,12 @@ struct _R {
     }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  /// This `_R.file` struct is generated, and contains static references to 5 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `Gilroy-Bold.ttf`.
     var gilroyBoldTtf: RswiftResources.FileResource { .init(name: "Gilroy-Bold", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
-
-    /// Resource file `Gilroy-Light.ttf`.
-    var gilroyLightTtf: RswiftResources.FileResource { .init(name: "Gilroy-Light", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
     /// Resource file `Gilroy-Medium.ttf`.
     var gilroyMediumTtf: RswiftResources.FileResource { .init(name: "Gilroy-Medium", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }

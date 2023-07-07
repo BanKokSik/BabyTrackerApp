@@ -12,6 +12,7 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+  var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
@@ -19,6 +20,15 @@ struct _R {
   var file: file { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func string(bundle: Foundation.Bundle) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: nil)
+  }
+  func string(locale: Foundation.Locale) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: locale)
+  }
+  func string(preferredLanguages: [String], locale: Locale? = nil) -> string {
+    .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
+  }
   func color(bundle: Foundation.Bundle) -> color {
     .init(bundle: bundle)
   }
@@ -49,6 +59,40 @@ struct _R {
       func makeIterator() -> IndexingIterator<[String]> {
         [new].makeIterator()
       }
+    }
+  }
+
+  /// This `_R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    let bundle: Foundation.Bundle
+    let preferredLanguages: [String]?
+    let locale: Locale?
+    var launchScreen: launchScreen { .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale)) }
+    var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
+
+    func launchScreen(preferredLanguages: [String]) -> launchScreen {
+      .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func localizable(preferredLanguages: [String]) -> localizable {
+      .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
+    }
+
+
+    /// This `_R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      let source: RswiftResources.StringResource.Source
+    }
+
+    /// This `_R.string.localizable` struct is generated, and contains static references to 1 localization keys.
+    struct localizable {
+      let source: RswiftResources.StringResource.Source
+
+      /// en translation: Hello
+      ///
+      /// Key: bear
+      ///
+      /// Locales: en
+      var bear: RswiftResources.StringResource { .init(key: "bear", tableName: "Localizable", source: source, developmentValue: "Hello", comment: nil) }
     }
   }
 
@@ -150,12 +194,24 @@ struct _R {
     var yellowOrange: RswiftResources.ColorResource { .init(name: "YellowOrange", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 5 images.
+  /// This `_R.image` struct is generated, and contains static references to 10 images.
   struct image {
     let bundle: Foundation.Bundle
 
     /// Image `Icon`.
     var icon: RswiftResources.ImageResource { .init(name: "Icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Image2`.
+    var image2: RswiftResources.ImageResource { .init(name: "Image2", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Image3`.
+    var image3: RswiftResources.ImageResource { .init(name: "Image3", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Image4`.
+    var image4: RswiftResources.ImageResource { .init(name: "Image4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `OnBoardingPage`.
+    var onBoardingPage: RswiftResources.ImageResource { .init(name: "OnBoardingPage", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `OnBoardingPage1`.
     var onBoardingPage1: RswiftResources.ImageResource { .init(name: "OnBoardingPage1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -168,6 +224,9 @@ struct _R {
 
     /// Image `OnBoardingPage4`.
     var onBoardingPage4: RswiftResources.ImageResource { .init(name: "OnBoardingPage4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `screen`.
+    var screen: RswiftResources.ImageResource { .init(name: "screen", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -218,15 +277,12 @@ struct _R {
     }
   }
 
-  /// This `_R.font` struct is generated, and contains static references to 6 fonts.
+  /// This `_R.font` struct is generated, and contains static references to 5 fonts.
   struct font: Sequence {
     let bundle: Foundation.Bundle
 
     /// Font `Gilroy-Bold`.
     var gilroyBold: RswiftResources.FontResource { .init(name: "Gilroy-Bold", bundle: bundle, filename: "Gilroy-Bold.ttf") }
-
-    /// Font `Gilroy-Light`.
-    var gilroyLight: RswiftResources.FontResource { .init(name: "Gilroy-Light", bundle: bundle, filename: "Gilroy-Light.ttf") }
 
     /// Font `Gilroy-Medium`.
     var gilroyMedium: RswiftResources.FontResource { .init(name: "Gilroy-Medium", bundle: bundle, filename: "Gilroy-Medium.ttf") }
@@ -241,7 +297,7 @@ struct _R {
     var teaspoon: RswiftResources.FontResource { .init(name: "teaspoon", bundle: bundle, filename: "Teaspoon.ttf") }
 
     func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
-      [gilroyBold, gilroyLight, gilroyMedium, gilroyRegular, gilroySemiBold, teaspoon].makeIterator()
+      [gilroyBold, gilroyMedium, gilroyRegular, gilroySemiBold, teaspoon].makeIterator()
     }
     func validate() throws {
       for font in self {
@@ -250,15 +306,12 @@ struct _R {
     }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  /// This `_R.file` struct is generated, and contains static references to 5 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `Gilroy-Bold.ttf`.
     var gilroyBoldTtf: RswiftResources.FileResource { .init(name: "Gilroy-Bold", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
-
-    /// Resource file `Gilroy-Light.ttf`.
-    var gilroyLightTtf: RswiftResources.FileResource { .init(name: "Gilroy-Light", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
     /// Resource file `Gilroy-Medium.ttf`.
     var gilroyMediumTtf: RswiftResources.FileResource { .init(name: "Gilroy-Medium", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }

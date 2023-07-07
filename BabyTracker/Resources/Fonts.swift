@@ -11,11 +11,11 @@ import RswiftResources
 
 struct Fonts {
     
-    static let teaspoon = R.font.teaspoon(size: 48.87)
+    static let teaspoon = R.font.teaspoon(size: 49)
     
     static let gilroyBold65 = R.font.gilroyBold(size: 65)
     static let gilroyRegular47 = R.font.gilroyRegular(size: 47)
-    static let gilroyRegular40 = R.font.gilroyRegular(size: 40.34)
+    static let gilroyRegular40 = R.font.gilroyRegular(size: 40)
     
     static let gilroyRegular32 = R.font.gilroyRegular(size: 32)
     static let gilroyRegular22 = R.font.gilroyRegular(size: 22)

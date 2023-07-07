@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  BabyTracker
+
+  Created by Мявкo on 2.07.23.
+  
+*/
+
+"NextButton" = "Next";
+"OnbordingLabelPage1" = "Plan the development";
+"OnbordingLabelPage2" = "Save moments";
+"OnbordingLabelPage3" = "Monitor the indicators";
+"OnbordingLabelPage4" = "Get recommendations";
