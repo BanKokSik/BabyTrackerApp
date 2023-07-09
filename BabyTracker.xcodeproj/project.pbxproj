@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F794D228B0EC88F581AE026 /* Pods_BabyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */; };
+		4B19FB502A5B099900CDE44B /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19FB4F2A5B099900CDE44B /* RootPresenter.swift */; };
+		4B19FB522A5B09B000CDE44B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19FB512A5B09B000CDE44B /* RootView.swift */; };
 		808C0B472A45D4DE00AEC365 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 808C0B462A45D4DE00AEC365 /* SnapKit */; };
 		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
 		9007E62A2A51996100A9E144 /* PageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007E6292A51996100A9E144 /* PageItems.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B19FB4F2A5B099900CDE44B /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		4B19FB512A5B09B000CDE44B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9007E6292A51996100A9E144 /* PageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItems.swift; sourceTree = "<group>"; };
 		9007E62B2A519BE300A9E144 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -79,9 +83,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4B19FB4B2A5B094900CDE44B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4B19FB4F2A5B099900CDE44B /* RootPresenter.swift */,
+				4B19FB512A5B09B000CDE44B /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		903FA6202A542EC50066CC4F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4B19FB4B2A5B094900CDE44B /* Root */,
 				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
 				903FA6212A542EE30066CC4F /* OnBoarding */,
 			);
@@ -366,8 +380,10 @@
 				908887102A4A09E400B8F04C /* PageCell.swift in Sources */,
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
+				4B19FB502A5B099900CDE44B /* RootPresenter.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
+				4B19FB522A5B09B000CDE44B /* RootView.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
 				90EE92472A49BC51003D4471 /* R.generated.swift in Sources */,
 				9007E62C2A519BE300A9E144 /* PageViewController.swift in Sources */,

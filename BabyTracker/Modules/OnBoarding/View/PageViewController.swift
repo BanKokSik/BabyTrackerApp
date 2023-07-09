@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol PageViewControllerDelegate: AnyObject {
+    
+}
+
 class PageViewController: UIViewController {
     
     var presenter: PagePresenter
+    weak var delegate: PageViewControllerDelegate?
     
     private lazy var nextButton: UIButton = _nextButton
     private lazy var pageControl: UIPageControl = _pageControl
