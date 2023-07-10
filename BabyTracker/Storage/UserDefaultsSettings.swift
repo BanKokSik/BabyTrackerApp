@@ -13,7 +13,7 @@ import UIKit
         case deviceId
     }
 
-   static var setupDeviceId: String! {
+   static var setupDeviceId: String?{
         
         get{
             return UserDefaults.standard.string(forKey: SettingsKeys.deviceId.rawValue)
@@ -21,7 +21,6 @@ import UIKit
         set{
             let defaults = UserDefaults.standard
             if let id = newValue {
-                print("DeviceID = \(id), for key \(SettingsKeys.deviceId.rawValue)")
                 defaults.set(id, forKey: SettingsKeys.deviceId.rawValue)
             }
             

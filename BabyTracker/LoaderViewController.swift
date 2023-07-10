@@ -7,9 +7,13 @@
 
 import UIKit
 import SnapKit
+protocol LoaderViewControllerDelegate: AnyObject{
+    
+}
 
 class LoaderViewController: UIViewController {
 
+    weak var delegate: LoaderViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,23 +43,5 @@ class LoaderViewController: UIViewController {
             
         }
     }
-    private func makeServiceCall() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-          
-       }
-    }
-    func showNextVC() {
-        let queue = DispatchQueue.global(qos: .utility)
-        queue.asyncAfter(deadline: .now() + 5.0) {
-            DispatchQueue.main.async {
-                let lVC = LoaderViewController()
-                lVC.show(RegisterViewController(), sender: LoaderViewController())
-            }
-            
-        }
-        
-    }
     
-    
-   
 }
