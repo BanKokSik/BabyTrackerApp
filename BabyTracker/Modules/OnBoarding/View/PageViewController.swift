@@ -12,10 +12,17 @@ protocol PageViewControllerDelegate: AnyObject {
     
 }
 
+protocol PageViewProtocol: AnyObject {
+    
+}
+
 class PageViewController: UIViewController {
     
-    var presenter: PagePresenter
+    var presenter: PagePresenterProtocol
     weak var delegate: PageViewControllerDelegate?
+    
+    weak var coordinator: Coordinator?
+    private var onboardingCoordinator: OnboardingCoordinator? { coordinator as? OnboardingCoordinator }
     
     private lazy var nextButton: UIButton = _nextButton
     private lazy var pageControl: UIPageControl = _pageControl
@@ -54,8 +61,12 @@ class PageViewController: UIViewController {
     
     @objc func nextButtonDidTap() {
         let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
-        pageControl.currentPage = nextIndex
-        presenter.scrollToItem(index: nextIndex, collectionView)
+        if nextIndex != presenter.pages.count - 1 {
+            pageControl.currentPage = nextIndex
+            presenter.scrollToItem(index: nextIndex, collectionView)
+        } else {
+            onboardingCoordinator?.didFinish()
+        }
     }
     
     func setPage(index: Int) {

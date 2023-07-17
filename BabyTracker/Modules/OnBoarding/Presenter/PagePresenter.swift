@@ -12,10 +12,12 @@ protocol PagePresenterProtocol: AnyObject {
     var nextPageIndex: (_ currentPage: Int) -> (Int) { get set }
     var previousPageIndex: (_ currentPage: Int) -> (Int) { get set }
     func scrollToItem(index: Int, _ collectionView: UICollectionView)
+    func didLoad()
 }
 
 
 class PagePresenter: PagePresenterProtocol {
+    weak var view: PageViewProtocol?
     
     let pages = [
         PageItems(image: R.image.onBoardingPage1(), textLabel: R.string.localizable.onbordingLabelPage1()),
@@ -30,6 +32,14 @@ class PagePresenter: PagePresenterProtocol {
     
     lazy var previousPageIndex = { (currentPage: Int) -> Int in
         return max(currentPage - 1, 0)
+    }
+    
+    init(view: PageViewProtocol? = nil) {
+        self.view = view
+    }
+    
+    func didLoad() {
+        
     }
     
     func scrollToItem(index: Int, _ collectionView: UICollectionView) {
