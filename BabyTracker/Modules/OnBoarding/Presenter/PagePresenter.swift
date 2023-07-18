@@ -17,14 +17,10 @@ protocol PagePresenterProtocol: AnyObject {
 
 
 class PagePresenter: PagePresenterProtocol {
+    
     weak var view: PageViewProtocol?
     
-    let pages = [
-        PageItems(image: R.image.onBoardingPage1(), textLabel: R.string.localizable.onbordingLabelPage1()),
-        PageItems(image: R.image.onBoardingPage2(), textLabel: R.string.localizable.onbordingLabelPage2()),
-        PageItems(image: R.image.onBoardingPage3(), textLabel: R.string.localizable.onbordingLabelPage3()),
-        PageItems(image: R.image.onBoardingPage4(), textLabel: R.string.localizable.onbordingLabelPage4())
-    ]
+    var pages = PageItems.pages
     
     lazy var nextPageIndex = { (currentPage: Int) -> Int in
         return min(currentPage + 1, self.pages.count - 1)
