@@ -83,9 +83,93 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 27 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
+
+      /// en translation:  Unlimited photos  Vaccinations and medical examinations  Relatives  Development tips  Design albums 
+      ///
+      /// Key: AdvantagesOfSubscriptionsTextView
+      ///
+      /// Locales: en, ru
+      var advantagesOfSubscriptionsTextView: RswiftResources.StringResource { .init(key: "AdvantagesOfSubscriptionsTextView", tableName: "Localizable", source: source, developmentValue: "\nUnlimited photos\n\nVaccinations and medical examinations\n\nRelatives\n\nDevelopment tips\n\nDesign albums\n", comment: nil) }
+
+      /// en translation: Cancel deletion
+      ///
+      /// Key: CancelDeletionButton
+      ///
+      /// Locales: en, ru
+      var cancelDeletionButton: RswiftResources.StringResource { .init(key: "CancelDeletionButton", tableName: "Localizable", source: source, developmentValue: "Cancel deletion", comment: nil) }
+
+      /// en translation: Create a profile
+      ///
+      /// Key: CreateProfileButton
+      ///
+      /// Locales: en, ru
+      var createProfileButton: RswiftResources.StringResource { .init(key: "CreateProfileButton", tableName: "Localizable", source: source, developmentValue: "Create a profile", comment: nil) }
+
+      /// en translation: Delete a relative
+      ///
+      /// Key: DeleteRelativeButton
+      ///
+      /// Locales: en, ru
+      var deleteRelativeButton: RswiftResources.StringResource { .init(key: "DeleteRelativeButton", tableName: "Localizable", source: source, developmentValue: "Delete a relative", comment: nil) }
+
+      /// en translation: Subscription terms: 1 month of using the paid version of the application for 199 rub and automatic renewal after a month
+      ///
+      /// Key: DescribeSubscriptionForAMonthTextView
+      ///
+      /// Locales: en, ru
+      var describeSubscriptionForAMonthTextView: RswiftResources.StringResource { .init(key: "DescribeSubscriptionForAMonthTextView", tableName: "Localizable", source: source, developmentValue: "Subscription terms: 1 month of using the paid version of the application for 199 rub and automatic renewal after a month", comment: nil) }
+
+      /// en translation: Subscription terms: 1 year of using the paid version of the application for 799 rub and automatic renewal after a year
+      ///
+      /// Key: DescribeSubscriptionForAYearTextView
+      ///
+      /// Locales: en, ru
+      var describeSubscriptionForAYearTextView: RswiftResources.StringResource { .init(key: "DescribeSubscriptionForAYearTextView", tableName: "Localizable", source: source, developmentValue: "Subscription terms: 1 year of using the paid version of the application for 799 rub and automatic renewal after a year", comment: nil) }
+
+      /// en translation: Subscription terms: you can purchase the paid version of the application once and forever for 2499 rub instead of 4980 rub
+      ///
+      /// Key: DescribeSubscriptionForeverTextView
+      ///
+      /// Locales: en, ru
+      var describeSubscriptionForeverTextView: RswiftResources.StringResource { .init(key: "DescribeSubscriptionForeverTextView", tableName: "Localizable", source: source, developmentValue: "Subscription terms: you can purchase the paid version of the application once and forever for 2499 rub instead of 4980 rub", comment: nil) }
+
+      /// en translation: Enter the code
+      ///
+      /// Key: EnterTheCodeButton
+      ///
+      /// Locales: en, ru
+      var enterTheCodeButton: RswiftResources.StringResource { .init(key: "EnterTheCodeButton", tableName: "Localizable", source: source, developmentValue: "Enter the code", comment: nil) }
+
+      /// en translation: Boy
+      ///
+      /// Key: GenderBoyLabel
+      ///
+      /// Locales: en, ru
+      var genderBoyLabel: RswiftResources.StringResource { .init(key: "GenderBoyLabel", tableName: "Localizable", source: source, developmentValue: "Boy", comment: nil) }
+
+      /// en translation: Girl
+      ///
+      /// Key: GenderGirlLabel
+      ///
+      /// Locales: en, ru
+      var genderGirlLabel: RswiftResources.StringResource { .init(key: "GenderGirlLabel", tableName: "Localizable", source: source, developmentValue: "Girl", comment: nil) }
+
+      /// en translation: Gender
+      ///
+      /// Key: GenderPlaceholder
+      ///
+      /// Locales: en, ru
+      var genderPlaceholder: RswiftResources.StringResource { .init(key: "GenderPlaceholder", tableName: "Localizable", source: source, developmentValue: "Gender", comment: nil) }
+
+      /// en translation: Log in with Apple
+      ///
+      /// Key: LogInWithAppleButton
+      ///
+      /// Locales: en, ru
+      var logInWithAppleButton: RswiftResources.StringResource { .init(key: "LogInWithAppleButton", tableName: "Localizable", source: source, developmentValue: "Log in with Apple", comment: nil) }
 
       /// en translation: Next
       ///
@@ -121,6 +205,76 @@ struct _R {
       ///
       /// Locales: en, ru
       var onbordingLabelPage4: RswiftResources.StringResource { .init(key: "OnbordingLabelPage4", tableName: "Localizable", source: source, developmentValue: "Get recommendations", comment: nil) }
+
+      /// en translation: Popular
+      ///
+      /// Key: PopularPlaceholderLabel
+      ///
+      /// Locales: en, ru
+      var popularPlaceholderLabel: RswiftResources.StringResource { .init(key: "PopularPlaceholderLabel", tableName: "Localizable", source: source, developmentValue: "Popular", comment: nil) }
+
+      /// en translation: Restore
+      ///
+      /// Key: RestoreButton
+      ///
+      /// Locales: en, ru
+      var restoreButton: RswiftResources.StringResource { .init(key: "RestoreButton", tableName: "Localizable", source: source, developmentValue: "Restore", comment: nil) }
+
+      /// en translation: Restore from the cloud
+      ///
+      /// Key: RestoreFromTheCloudButton
+      ///
+      /// Locales: en, ru
+      var restoreFromTheCloudButton: RswiftResources.StringResource { .init(key: "RestoreFromTheCloudButton", tableName: "Localizable", source: source, developmentValue: "Restore from the cloud", comment: nil) }
+
+      /// en translation: Subscribe
+      ///
+      /// Key: SubscribeButton
+      ///
+      /// Locales: en, ru
+      var subscribeButton: RswiftResources.StringResource { .init(key: "SubscribeButton", tableName: "Localizable", source: source, developmentValue: "Subscribe", comment: nil) }
+
+      /// en translation: 1 month
+      ///
+      /// Key: SubscriptionForAMonthLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForAMonthLabel: RswiftResources.StringResource { .init(key: "SubscriptionForAMonthLabel", tableName: "Localizable", source: source, developmentValue: "1 month", comment: nil) }
+
+      /// en translation: 199rub in month
+      ///
+      /// Key: SubscriptionForAMonthPriceLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForAMonthPriceLabel: RswiftResources.StringResource { .init(key: "SubscriptionForAMonthPriceLabel", tableName: "Localizable", source: source, developmentValue: "199rub in month", comment: nil) }
+
+      /// en translation: 7 days free
+      ///
+      /// Key: SubscriptionForAYearLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForAYearLabel: RswiftResources.StringResource { .init(key: "SubscriptionForAYearLabel", tableName: "Localizable", source: source, developmentValue: "7 days free", comment: nil) }
+
+      /// en translation: then 799rub in year
+      ///
+      /// Key: SubscriptionForAYearPriceLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForAYearPriceLabel: RswiftResources.StringResource { .init(key: "SubscriptionForAYearPriceLabel", tableName: "Localizable", source: source, developmentValue: "then 799rub in year", comment: nil) }
+
+      /// en translation: Forever
+      ///
+      /// Key: SubscriptionForeverLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForeverLabel: RswiftResources.StringResource { .init(key: "SubscriptionForeverLabel", tableName: "Localizable", source: source, developmentValue: "Forever", comment: nil) }
+
+      /// en translation: 4980 / 2490rub
+      ///
+      /// Key: SubscriptionForeverPriceLabel
+      ///
+      /// Locales: en, ru
+      var subscriptionForeverPriceLabel: RswiftResources.StringResource { .init(key: "SubscriptionForeverPriceLabel", tableName: "Localizable", source: source, developmentValue: "4980 / 2490rub", comment: nil) }
     }
   }
 
@@ -222,12 +376,18 @@ struct _R {
     var yellowOrange: RswiftResources.ColorResource { .init(name: "YellowOrange", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 5 images.
+  /// This `_R.image` struct is generated, and contains static references to 8 images.
   struct image {
     let bundle: Foundation.Bundle
 
-    /// Image `Icon`.
-    var icon: RswiftResources.ImageResource { .init(name: "Icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `Boy`.
+    var boy: RswiftResources.ImageResource { .init(name: "Boy", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Checkmark`.
+    var checkmark: RswiftResources.ImageResource { .init(name: "Checkmark", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Girl`.
+    var girl: RswiftResources.ImageResource { .init(name: "Girl", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `OnBoardingPage1`.
     var onBoardingPage1: RswiftResources.ImageResource { .init(name: "OnBoardingPage1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -240,6 +400,9 @@ struct _R {
 
     /// Image `OnBoardingPage4`.
     var onBoardingPage4: RswiftResources.ImageResource { .init(name: "OnBoardingPage4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `icons`.
+    var icons: RswiftResources.ImageResource { .init(name: "icons", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.

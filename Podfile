@@ -8,5 +8,6 @@ target 'BabyTracker' do
   # Pods for BabyTracker
 pod 'R.swift'
 pod 'SnapKit'
+pod 'Alamofire'
 
 end

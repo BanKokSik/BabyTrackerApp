@@ -22,8 +22,16 @@
 		87E8F1F22A652A130067B7E6 /* CreateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1ED2A652A130067B7E6 /* CreateProfileVC.swift */; };
 		9007E62A2A51996100A9E144 /* PageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007E6292A51996100A9E144 /* PageItems.swift */; };
 		9007E62C2A519BE300A9E144 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9007E62B2A519BE300A9E144 /* PageViewController.swift */; };
+		901BED6C2A64375000954E2E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901BED6B2A64375000954E2E /* SubscriptionViewController.swift */; };
+		90464F822A5DE2AD00DA431D /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F812A5DE2AD00DA431D /* RegistrationPageViewController.swift */; };
+		90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F832A5DE2D900DA431D /* PopupViewController.swift */; };
+		90464F882A5EEB9A00DA431D /* PopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F872A5EEB9A00DA431D /* PopupPresenter.swift */; };
+		90464F8B2A5FDE0600DA431D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8A2A5FDE0600DA431D /* NetworkManager.swift */; };
+		90464F8E2A63293300DA431D /* PopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8D2A63293300DA431D /* PopupModel.swift */; };
 		908887102A4A09E400B8F04C /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088870F2A4A09E400B8F04C /* PageCell.swift */; };
 		90943D5E2A51DC1400763063 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90943D602A51DC1400763063 /* Localizable.strings */; };
+		90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDD7A22A5DDFFE00945581 /* BaseButton.swift */; };
+		90CDD7A52A5DE03500945581 /* ColorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDD7A42A5DE03500945581 /* ColorButtons.swift */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
 		90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */; };
 		90E2CBC22A45B4D000B116BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E2CBC12A45B4D000B116BE /* Assets.xcassets */; };
@@ -53,10 +61,18 @@
 		87E8F1ED2A652A130067B7E6 /* CreateProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileVC.swift; sourceTree = "<group>"; };
 		9007E6292A51996100A9E144 /* PageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItems.swift; sourceTree = "<group>"; };
 		9007E62B2A519BE300A9E144 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		901BED6B2A64375000954E2E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		903FA61F2A51E6690066CC4F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90464F812A5DE2AD00DA431D /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
+		90464F832A5DE2D900DA431D /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		90464F872A5EEB9A00DA431D /* PopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresenter.swift; sourceTree = "<group>"; };
+		90464F8A2A5FDE0600DA431D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		90464F8D2A63293300DA431D /* PopupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModel.swift; sourceTree = "<group>"; };
 		9088870F2A4A09E400B8F04C /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		90943D5F2A51DC1400763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90943D622A51DD1B00763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		90CDD7A22A5DDFFE00945581 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		90CDD7A42A5DE03500945581 /* ColorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButtons.swift; sourceTree = "<group>"; };
 		90E2CBB52A45B4CF00B116BE /* BabyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E2CBBA2A45B4CF00B116BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +194,11 @@
 			children = (
 				87E8F1E72A652A130067B7E6 /* CreateProfile */,
 				87E8F1E22A652A130067B7E6 /* Registration */,
+				90464F8F2A64343600DA431D /* Subscriptions */,
+				4B19FB4B2A5B094900CDE44B /* Root */,
+				90464F7F2A5DE14500DA431D /* PopupGender */,
 				903FA6212A542EE30066CC4F /* OnBoarding */,
+				90464F802A5DE19600DA431D /* Registration */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -192,6 +212,65 @@
 				4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		90464F7F2A5DE14500DA431D /* PopupGender */ = {
+			isa = PBXGroup;
+			children = (
+				90464F8C2A63291200DA431D /* Model */,
+				90464F852A5EEA1000DA431D /* Presenter */,
+				90464F862A5EEA1A00DA431D /* View */,
+			);
+			path = PopupGender;
+			sourceTree = "<group>";
+		};
+		90464F802A5DE19600DA431D /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				90E2CBBC2A45B4CF00B116BE /* RegisterViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		90464F852A5EEA1000DA431D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				90464F872A5EEB9A00DA431D /* PopupPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		90464F862A5EEA1A00DA431D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90464F832A5DE2D900DA431D /* PopupViewController.swift */,
+				90464F812A5DE2AD00DA431D /* RegistrationPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90464F892A5FDDE500DA431D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				90464F8A2A5FDE0600DA431D /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		90464F8C2A63291200DA431D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90464F8D2A63293300DA431D /* PopupModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90464F8F2A64343600DA431D /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				901BED6B2A64375000954E2E /* SubscriptionViewController.swift */,
+			);
+			path = Subscriptions;
 			sourceTree = "<group>";
 		};
 		9067B00C2A4EF0FB005723EE /* Model */ = {
@@ -248,6 +327,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		90CDD7A12A5DDFEB00945581 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				90CDD7A22A5DDFFE00945581 /* BaseButton.swift */,
+				90CDD7A42A5DE03500945581 /* ColorButtons.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		90E2CBAC2A45B4CF00B116BE = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +357,7 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				90464F892A5FDDE500DA431D /* Network */,
 				9067B00F2A4EF394005723EE /* App */,
 				4B7D69C62A65595500EF3F75 /* Views */,
 				87E8F1DC2A6521FA0067B7E6 /* Storage */,
@@ -283,6 +372,7 @@
 		90E9551F2A5839E5003D2109 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				90EE92442A49BB7A003D4471 /* Fonts.swift */,
 				90E955242A5839F9003D2109 /* Gilroy-Bold.ttf */,
 				90E955222A5839F9003D2109 /* Gilroy-Medium.ttf */,
 				90E955212A5839F9003D2109 /* Gilroy-Regular.ttf */,
@@ -295,9 +385,9 @@
 		90EE92432A49BB6B003D4471 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				90CDD7A12A5DDFEB00945581 /* Buttons */,
 				90E9551F2A5839E5003D2109 /* Fonts */,
 				90E2CBC12A45B4D000B116BE /* Assets.xcassets */,
-				90EE92442A49BB7A003D4471 /* Fonts.swift */,
 				90943D602A51DC1400763063 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -459,11 +549,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90464F8B2A5FDE0600DA431D /* NetworkManager.swift in Sources */,
+				90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */,
+				90E2CBBD2A45B4CF00B116BE /* RegisterViewController.swift in Sources */,
+				90464F822A5DE2AD00DA431D /* RegistrationPageViewController.swift in Sources */,
 				90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */,
+				90CDD7A52A5DE03500945581 /* ColorButtons.swift in Sources */,
+				901BED6C2A64375000954E2E /* SubscriptionViewController.swift in Sources */,
+				90464F882A5EEB9A00DA431D /* PopupPresenter.swift in Sources */,
 				908887102A4A09E400B8F04C /* PageCell.swift in Sources */,
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
 				87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */,
 				87E8F1F02A652A130067B7E6 /* CreateProfilePresenter.swift in Sources */,
+				90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */,
+				90464F8E2A63293300DA431D /* PopupModel.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				4B7D69C82A65598E00EF3F75 /* Coordinator.swift in Sources */,
 				87E8F1F22A652A130067B7E6 /* CreateProfileVC.swift in Sources */,

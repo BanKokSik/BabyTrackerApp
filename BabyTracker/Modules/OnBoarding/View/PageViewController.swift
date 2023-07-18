@@ -45,8 +45,15 @@ class PageViewController: UIViewController {
         configureSwipes()
     }
     
+    func scrollToItem(index: Int, _ collectionView: UICollectionView) {
+        guard index < presenter.pages.count else { return }
+        
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
     @objc func handleSwipeLeft() {
-        let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
+        let nextIndex = swipeOrFinishOnbording()
         setPage(index: nextIndex)
     }
 
@@ -56,22 +63,28 @@ class PageViewController: UIViewController {
     }
     
     @objc func pageControlDidTap() {
-        presenter.scrollToItem(index: pageControl.currentPage, collectionView)
+        scrollToItem(index: pageControl.currentPage, collectionView)
     }
     
     @objc func nextButtonDidTap() {
+        _ = swipeOrFinishOnbording()
+    }
+    
+    func swipeOrFinishOnbording() -> Int {
         let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
-        if nextIndex != presenter.pages.count - 1 {
+        
+        if nextIndex != presenter.pages.count {
             pageControl.currentPage = nextIndex
-            presenter.scrollToItem(index: nextIndex, collectionView)
+            scrollToItem(index: nextIndex, collectionView)
         } else {
             onboardingCoordinator?.didFinish()
         }
+        return nextIndex
     }
     
     func setPage(index: Int) {
         pageControl.currentPage = index
-        presenter.scrollToItem(index: index, collectionView)
+        scrollToItem(index: index, collectionView)
     }
 }
 
@@ -112,7 +125,7 @@ extension PageViewController {
         let button = UIButton(type: .system)
         button.setTitle(R.string.localizable.nextButton(), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.setBackgroundColor(R.color.heliotrope()!, for: .normal)
+        button.setBackgroundColor(R.color.heliotrope(), for: .normal)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)

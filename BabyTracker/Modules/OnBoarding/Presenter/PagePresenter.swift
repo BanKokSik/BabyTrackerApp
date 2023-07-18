@@ -5,13 +5,12 @@
 //  Created by Мявкo on 7.07.23.
 //
 
-import UIKit
+
 
 protocol PagePresenterProtocol: AnyObject {
     var pages: [PageItems] { get }
     var nextPageIndex: (_ currentPage: Int) -> (Int) { get set }
     var previousPageIndex: (_ currentPage: Int) -> (Int) { get set }
-    func scrollToItem(index: Int, _ collectionView: UICollectionView)
     func didLoad()
 }
 
@@ -23,7 +22,7 @@ class PagePresenter: PagePresenterProtocol {
     var pages = PageItems.pages
     
     lazy var nextPageIndex = { (currentPage: Int) -> Int in
-        return min(currentPage + 1, self.pages.count - 1)
+        return min(currentPage + 1, self.pages.count)
     }
     
     lazy var previousPageIndex = { (currentPage: Int) -> Int in
@@ -36,10 +35,5 @@ class PagePresenter: PagePresenterProtocol {
     
     func didLoad() {
         
-    }
-    
-    func scrollToItem(index: Int, _ collectionView: UICollectionView) {
-        let indexPath = IndexPath(item: index, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
