@@ -8,32 +8,33 @@
 import UIKit
 import SnapKit
 
-protocol RegistrationPageViewControllerDelegate: AnyObject {
-    func didSelectValueInTextField(_ controller: PopupViewController, value: String)
-}
-
 protocol PopupPresenterDelegate: AnyObject {
     func didSelectGender(_ controller: PopupViewController, gender: Gender?)
 }
 
-class PopupViewController: UIViewController, ViewControllerDelegate {
+protocol PopupViewControllerDelegate: AnyObject {
     
-    private var presenter: PopupPresenter?
+}
+
+class PopupViewController: UIViewController {
+    
+    var presenter: PopupPresenter?
+    weak var delegate: PopupPresenterDelegate?
+    
+    weak var coordinator: Coordinator?
+    private var popupCoordinator: PopupCoordinator? { coordinator as? PopupCoordinator }
     
     var blurView: UIVisualEffectView?
     
-    private lazy var boyView: UICustomView = _boyView
+    private lazy var boyView: BorderView = _boyView
     private lazy var boyImageView: UIImageView = _boyImageView
     private lazy var boyLabel: UILabel = _boyLabel
     
-    private lazy var girlView: UICustomView = _girlView
+    private lazy var girlView: BorderView = _girlView
     private lazy var girlImageView: UIImageView = _girlImageView
     private lazy var girlLabel: UILabel = _girlLabel
     
     private lazy var checkmarkImageView: UIImageView = _checkmarkImageView
-    
-    weak var delegateRegistration: RegistrationPageViewControllerDelegate?
-    weak var delegatePresenter: PopupPresenterDelegate?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -56,22 +57,59 @@ class PopupViewController: UIViewController, ViewControllerDelegate {
         configureTapGesture(for: girlView, action: #selector(girlIsTapped))
     }
     
-    func configureTapGesture(for view: UICustomView, action: Selector) {
+    func configureTapGesture(for view: BorderView, action: Selector) {
         let tapGesture = UITapGestureRecognizer(target: self, action: action)
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
     }
     
     @objc private func boyIsTapped() {
-        delegatePresenter?.didSelectGender(self, gender: .boy)
+        delegate?.didSelectGender(self, gender: .boy)
     }
     
     @objc private func girlIsTapped() {
-        delegatePresenter?.didSelectGender(self, gender: .girl)
+        delegate?.didSelectGender(self, gender: .girl)
+    }
+    
+    func hidePopup() {
+        popupCoordinator?.closePopup()
     }
     
     func setValueInTextField(_ selectedValue: String) {
-        delegateRegistration?.didSelectValueInTextField(self, value: selectedValue)
+        popupCoordinator?.setValueInTextField(selectedValue)
+    }
+    
+    func openPopup(_ controller: CreateProfileVC) {
+        controller.makeBackgroundBlur()
+        genderIsChosen(controller)
+        
+        view.center = controller.view.center
+        blurView = controller.blurView
+
+        controller.view.addSubview(view)
+
+        view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        view.alpha = 0.0
+        UIView.animate(withDuration: 0.2) {
+            self.view.transform = CGAffineTransform.identity
+            self.view.alpha = 1.0
+        }
+    }
+    
+    func genderIsChosen(_ controller: CreateProfileVC) {
+        let gender = controller.activeGender
+        if gender == .boy {
+            toggleViewActiveStateOnBoy()
+            layoutCheckmarkOnBoy()
+        } else if gender == .girl {
+            toggleViewActiveStateOnGirl()
+            layoutCheckmarkOnGirl()
+        }
+    }
+    
+    func closePopup() {
+        removeBackgroundBlur()
+        closePopupWithAnimation()
     }
     
     let durationOfClosing = 0.4
@@ -108,12 +146,12 @@ class PopupViewController: UIViewController, ViewControllerDelegate {
         toggleViewActiveState(boyView, otherView: girlView)
     }
     
-    func toggleViewActiveState(_ view: UICustomView, otherView: UICustomView) {
+    func toggleViewActiveState(_ view: BorderView, otherView: BorderView) {
         
         guard view.isActive != .active else { return }
         otherView.isActive = .inactive
         view.isActive = .active
-        
+  
         view.setNeedsDisplay()
         otherView.setNeedsDisplay()
     }
@@ -132,8 +170,8 @@ extension PopupViewController {
         return label
     }
     
-    var _boyView: UICustomView {
-        let view = UICustomView()
+    var _boyView: BorderView {
+        let view = BorderView()
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         view.color = UIColor.white
@@ -154,8 +192,8 @@ extension PopupViewController {
         return label
     }
     
-    var _girlView: UICustomView {
-        let view = UICustomView()
+    var _girlView: BorderView {
+        let view = BorderView()
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         view.color = UIColor.white
@@ -216,7 +254,7 @@ extension PopupViewController {
         }
     }
     
-    func layoutCheckmark(_ gender: UICustomView) {
+    func layoutCheckmark(_ gender: BorderView) {
         gender.addSubview(checkmarkImageView)
         checkmarkImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(27)

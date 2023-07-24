@@ -1,20 +1,20 @@
 //
-//  OnboardingCoordinator.swift
+//  RegistrationCoordinator.swift
 //  BabyTracker
 //
-//  Created by Алексей Поддубный on 17.07.2023.
+//  Created by Мявкo on 18.07.23.
 //
 
 import UIKit
 
-protocol OnboardingCoordinatorDelegate: AnyObject {
-    func onboardingModuleDidFinish()
+protocol RegistrationCoordinatorDelegate: AnyObject {
+    func registrationModuleDidFinish()
 }
 
-final class OnboardingCoordinator: Coordinator {
+final class RegistrationCoordinator: Coordinator {
     weak var parent: Coordinator?
     var childCoordinators: [Coordinator] = []
-    weak var delegate: OnboardingCoordinatorDelegate?
+    weak var delegate: RegistrationCoordinatorDelegate?
     
     private let navController: UINavigationController
     private var viewController: UIViewController?
@@ -25,19 +25,19 @@ final class OnboardingCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = PageViewController()
+        let viewController = RegisterViewController()
         viewController.coordinator = self
         self.viewController = viewController
     }
     
     func entry() -> UIViewController {
-        guard let viewController = viewController as? PageViewController else {
-            fatalError("viewController is not PageViewController")
+        guard let viewController = viewController as? RegisterViewController else {
+            fatalError("viewController is not RegisterViewController")
         }
         return viewController
     }
     
     func didFinish() {
-        delegate?.onboardingModuleDidFinish()
+        delegate?.registrationModuleDidFinish()
     }
 }

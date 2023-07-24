@@ -27,7 +27,7 @@ class PopupPresenter: PopupPresenterProtocol {
     
     init(_ controller: PopupViewController) {
         popupVC = controller
-        popupVC?.delegatePresenter = self
+        popupVC?.delegate = self
     }
     
     func whoHasCheckmark() {
@@ -44,8 +44,7 @@ class PopupPresenter: PopupPresenterProtocol {
         toggleActiveState()
         whoHasCheckmark()
         
-        popupVC?.closePopupWithAnimation()
-        popupVC?.removeBackgroundBlur()
+        popupVC?.hidePopup()
     }
     
     func toggleActiveState() {

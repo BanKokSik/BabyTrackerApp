@@ -16,16 +16,34 @@
 "DeleteRelativeButton" = "Удалить родственника";
 "CancelDeletionButton" = "Отменить удаление";
 
+
 // MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
 "OnbordingLabelPage1" = "Планируйте развитие";
 "OnbordingLabelPage2" = "Сохраняйте моменты";
 "OnbordingLabelPage3" = "Следите за показателями";
 "OnbordingLabelPage4" = "Получайте рекомендации";
 
+
+// MARK: - Creation profile (Screen 4)
+"AlertMessageToAddImage" = "Выберите способ загрузки фотографии";
+"AlertActionCamera" = "Камера";
+"AlertActionGallery" = "Галерея";
+"AlertActionCancel" = "Отменить";
+"NamePlaceholder" = "Введите имя";
+"GenderPlaceholder" = "Пол";
+"BirthDatePlaceholder" = "Дата рождения";
+"MetricSystemSwitcher" = "Метрическая система";
+"UserAgreementTextView" = "Нажимая «Далее», вы подтверждаете, что прочитали и приняли наши Условия и Политику конфиденциальности.";
+"TermsLabel" = "Условия";
+"TermsLink" = "http://stackoverflow.com";
+"PrivacyPolicyLabel" = "Политику конфиденциальности";
+"PrivacyPolicyLink" = "https://www.google.com";
+
+
 // MARK: - Gender page (Screen 4 (pop ap))
 "GenderBoyLabel" = "Мальчик";
 "GenderGirlLabel" = "Девочка";
-"GenderPlaceholder" = "Пол";
+
 
 // MARK: - Subscriptions (Screen 7)
 "RestoreButton" = "Восстановить";

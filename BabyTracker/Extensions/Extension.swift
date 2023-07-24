@@ -37,34 +37,15 @@ extension UIButton {
     }
 }
 
-class UICustomView: UIView {
-    var isActive: ElementActivity = .inactive
-    
-    var color = R.color.wildSand()
-    var lineWidth: CGFloat = 3
-    var dashPattern: [CGFloat] = [2, 4]
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-                
-        drawBorder()
-    }
-    
-    func drawBorder() {
-        let path = UIBezierPath(roundedRect: bounds, cornerRadius: 10)
-        
-        UIColor.white.setFill()
-        path.fill()
-        path.lineWidth = lineWidth
-        
-        switch isActive {
-        case .active:
-            R.color.heliotrope()?.setStroke()
-            
-            path.setLineDash(dashPattern, count: 2, phase: 0)
-        case .inactive:
-            color?.setStroke()
+extension NSMutableAttributedString {
+
+    public func setAsLink(textToFind:String, linkURL:String) -> Bool {
+
+        let foundRange = self.mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            self.addAttribute(.link, value: linkURL, range: foundRange)
+            return true
         }
-        path.stroke()
+        return false
     }
 }

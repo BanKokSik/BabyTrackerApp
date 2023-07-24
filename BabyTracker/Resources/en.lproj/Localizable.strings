@@ -16,16 +16,34 @@
 "DeleteRelativeButton" = "Delete a relative";
 "CancelDeletionButton" = "Cancel deletion";
 
+
 // MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
 "OnbordingLabelPage1" = "Plan the development";
 "OnbordingLabelPage2" = "Save moments";
 "OnbordingLabelPage3" = "Monitor the indicators";
 "OnbordingLabelPage4" = "Get recommendations";
 
+
+// MARK: - Creation profile (Screen 4)
+"AlertMessageToAddImage" = "Choose a way to upload a photo";
+"AlertActionCamera" = "Camera";
+"AlertActionGallery" = "Gallery";
+"AlertActionCancel" = "Cancel";
+"NamePlaceholder" = "Enter a name";
+"GenderPlaceholder" = "Gender";
+"BirthDatePlaceholder" = "Date of birth";
+"MetricSystemSwitcher" = "Metric system";
+"UserAgreementTextView" = "By clicking \"Next\", you confirm that you have read and accepted our Terms and Privacy Policy.";
+"TermsLabel" = "Terms";
+"TermsLink" = "http://stackoverflow.com";
+"PrivacyPolicyLabel" = "Privacy Policy";
+"PrivacyPolicyLink" = "https://www.google.com";
+
+
 // MARK: - Gender page (Screen 4 (pop ap))
 "GenderBoyLabel" = "Boy";
 "GenderGirlLabel" = "Girl";
-"GenderPlaceholder" = "Gender";
+
 
 // MARK: - Subscriptions (Screen 7)
 "RestoreButton" = "Restore";
