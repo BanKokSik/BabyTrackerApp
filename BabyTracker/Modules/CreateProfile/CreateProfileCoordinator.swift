@@ -5,7 +5,6 @@
 //  Created by Алексей Поддубный on 17.07.2023.
 //
 
-import Foundation
 import UIKit
 
 final class CreateProfileCoordinator: Coordinator {

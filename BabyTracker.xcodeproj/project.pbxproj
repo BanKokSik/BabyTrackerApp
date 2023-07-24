@@ -12,7 +12,10 @@
 		4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CA2A6559B800EF3F75 /* AppCoordinator.swift */; };
 		4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */; };
 		4B7D69CF2A65690800EF3F75 /* CreateProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CE2A65690800EF3F75 /* CreateProfileCoordinator.swift */; };
+		8025163C2A65976800A9E0B1 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025163B2A65976800A9E0B1 /* RegisterCoordinator.swift */; };
 		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
+		80BB3AB92A68198300E05642 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB3AB82A68198300E05642 /* LoaderViewController.swift */; };
+		80BB3ABF2A697AA800E05642 /* LoaderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */; };
 		87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1DD2A6521FA0067B7E6 /* UserDefaultsSettings.swift */; };
 		87E8F1E12A6522400067B7E6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1E02A6522400067B7E6 /* BorderView.swift */; };
 		87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1E42A652A130067B7E6 /* RegistrationPresenter.swift */; };
@@ -43,7 +46,10 @@
 		4B7D69CA2A6559B800EF3F75 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		4B7D69CE2A65690800EF3F75 /* CreateProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileCoordinator.swift; sourceTree = "<group>"; };
+		8025163B2A65976800A9E0B1 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		80BB3AB82A68198300E05642 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCoordinator.swift; sourceTree = "<group>"; };
 		87E8F1DD2A6521FA0067B7E6 /* UserDefaultsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettings.swift; sourceTree = "<group>"; };
 		87E8F1E02A6522400067B7E6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderView.swift; path = BabyTracker/Views/BorderView.swift; sourceTree = SOURCE_ROOT; };
 		87E8F1E42A652A130067B7E6 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
@@ -105,6 +111,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		80BB3ABA2A697A6300E05642 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				80BB3ABD2A697A8300E05642 /* Presenter */,
+				80BB3ABC2A697A7B00E05642 /* View */,
+				80BB3ABB2A697A7400E05642 /* Model */,
+				80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		80BB3ABB2A697A7400E05642 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80BB3ABC2A697A7B00E05642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80BB3AB82A68198300E05642 /* LoaderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80BB3ABD2A697A8300E05642 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		87E8F1DC2A6521FA0067B7E6 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +157,7 @@
 			children = (
 				87E8F1E32A652A130067B7E6 /* Presenter */,
 				87E8F1E52A652A130067B7E6 /* View */,
+				8025163B2A65976800A9E0B1 /* RegisterCoordinator.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -176,6 +216,7 @@
 		903FA6202A542EC50066CC4F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				80BB3ABA2A697A6300E05642 /* Loader */,
 				87E8F1E72A652A130067B7E6 /* CreateProfile */,
 				87E8F1E22A652A130067B7E6 /* Registration */,
 				903FA6212A542EE30066CC4F /* OnBoarding */,
@@ -464,6 +505,7 @@
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
 				87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */,
 				87E8F1F02A652A130067B7E6 /* CreateProfilePresenter.swift in Sources */,
+				80BB3ABF2A697AA800E05642 /* LoaderCoordinator.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				4B7D69C82A65598E00EF3F75 /* Coordinator.swift in Sources */,
 				87E8F1F22A652A130067B7E6 /* CreateProfileVC.swift in Sources */,
@@ -472,7 +514,9 @@
 				4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */,
 				87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */,
 				4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */,
+				80BB3AB92A68198300E05642 /* LoaderViewController.swift in Sources */,
 				87E8F1F12A652A130067B7E6 /* Model.swift in Sources */,
+				8025163C2A65976800A9E0B1 /* RegisterCoordinator.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
