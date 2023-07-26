@@ -6,8 +6,62 @@
   
 */
 
+// MARK: - Buttons
 "NextButton" = "Next";
+"CreateProfileButton" = "Create a profile";
+"LogInWithAppleButton" = "Log in with Apple";
+"EnterTheCodeButton" = "Enter the code";
+"RestoreFromTheCloudButton" = "Restore from the cloud"; // retrieve, recover
+"SubscribeButton" = "Subscribe";
+"DeleteRelativeButton" = "Delete a relative";
+"CancelDeletionButton" = "Cancel deletion";
+
+
+// MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
 "OnbordingLabelPage1" = "Plan the development";
 "OnbordingLabelPage2" = "Save moments";
 "OnbordingLabelPage3" = "Monitor the indicators";
 "OnbordingLabelPage4" = "Get recommendations";
+
+
+// MARK: - Creation profile (Screen 4)
+"AlertMessageToAddImage" = "Choose a way to upload a photo";
+"AlertActionCamera" = "Camera";
+"AlertActionGallery" = "Gallery";
+"AlertActionCancel" = "Cancel";
+"NamePlaceholder" = "Enter a name";
+"GenderPlaceholder" = "Gender";
+"BirthDatePlaceholder" = "Date of birth";
+"MetricSystemSwitcher" = "Metric system";
+"UserAgreementTextView" = "By clicking \"Next\", you confirm that you have read and accepted our Terms and Privacy Policy.";
+"TermsLabel" = "Terms";
+"TermsLink" = "http://stackoverflow.com";
+"PrivacyPolicyLabel" = "Privacy Policy";
+"PrivacyPolicyLink" = "https://www.google.com";
+
+
+// MARK: - Gender page (Screen 4 (pop ap))
+"GenderBoyLabel" = "Boy";
+"GenderGirlLabel" = "Girl";
+
+
+// MARK: - Subscriptions (Screen 7)
+"RestoreButton" = "Restore";
+"AdvantagesOfSubscriptionsTextView" =
+"
+Unlimited photos\n
+Vaccinations and medical examinations\n
+Relatives\n
+Development tips\n
+Design albums
+";
+"SubscriptionForAYearLabel" = "7 days free";
+"SubscriptionForAYearPriceLabel" = "then 799rub in year";
+"DescribeSubscriptionForAYearTextView" = "Subscription terms: 1 year of using the paid version of the application for 799 rub and automatic renewal after a year";
+"PopularPlaceholderLabel" = "Popular";
+"SubscriptionForAMonthLabel" = "1 month";
+"SubscriptionForAMonthPriceLabel" = "199rub in month";
+"DescribeSubscriptionForAMonthTextView" = "Subscription terms: 1 month of using the paid version of the application for 199 rub and automatic renewal after a month";
+"SubscriptionForeverLabel" = "Forever";
+"SubscriptionForeverPriceLabel" = "4980 / 2490rub";
+"DescribeSubscriptionForeverTextView" = "Subscription terms: you can purchase the paid version of the application once and forever for 2499 rub instead of 4980 rub";

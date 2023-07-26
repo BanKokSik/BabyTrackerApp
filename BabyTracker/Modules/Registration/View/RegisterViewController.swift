@@ -8,7 +8,20 @@
 import UIKit
 import SnapKit
 
+protocol RegisterViewControllerDelegate: AnyObject {
+    
+}
+
+protocol RegisterViewProtocol: AnyObject {
+    
+}
+
 class RegisterViewController: UIViewController {
+    
+    weak var delegate: RegisterViewControllerDelegate?
+    
+    weak var coordinator: Coordinator?
+    private var registrationCoordinator: RegistrationCoordinator? { coordinator as? RegistrationCoordinator }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +32,6 @@ class RegisterViewController: UIViewController {
         createProfileButton.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
     }
     
-    
-   
      private let createProfileButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor.rgb(red: 207, green: 104, blue: 255)
@@ -79,13 +90,7 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func createProfileButtonTapped(){
-        let createProfileVC = CreateProfileVC()
-        navigationController?.pushViewController(createProfileVC, animated: true)
-        
+        registrationCoordinator?.didFinish()
     }
-    
-    
-
-
 }
 

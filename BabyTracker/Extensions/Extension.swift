@@ -32,7 +32,20 @@ extension UIImage {
 }
 
 extension UIButton {
-    func setBackgroundColor(_ backgroundColor: UIColor, for state: UIControl.State) {
-        self.setBackgroundImage(.pixel(ofColor: backgroundColor), for: state)
+    func setBackgroundColor(_ backgroundColor: UIColor?, for state: UIControl.State) {
+        self.setBackgroundImage(.pixel(ofColor: backgroundColor!), for: state)
+    }
+}
+
+extension NSMutableAttributedString {
+
+    public func setAsLink(textToFind:String, linkURL:String) -> Bool {
+
+        let foundRange = self.mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            self.addAttribute(.link, value: linkURL, range: foundRange)
+            return true
+        }
+        return false
     }
 }
