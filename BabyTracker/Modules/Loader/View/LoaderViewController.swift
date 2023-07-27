@@ -7,36 +7,32 @@
 
 import UIKit
 import SnapKit
-protocol LoaderViewControllerDelegate: AnyObject{
-    
-}
+
+protocol LoaderViewControllerDelegate: AnyObject {}
 
 class LoaderViewController: UIViewController {
     weak var coordinator: Coordinator?
-    private var loaderCoordinator: LoaderCoordinator? { coordinator as? LoaderCoordinator }
-
     weak var delegate: LoaderViewControllerDelegate?
+    
+    private var loaderCoordinator: LoaderCoordinator? { coordinator as? LoaderCoordinator }
+    
+    let deviceId = UIDevice.current.identifierForVendor?.uuidString
+    private lazy var loaderImageView: UIImageView = _loaderImageView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initialize()
-        setupConstraints()
-    }
-    let deviceId = UIDevice.current.identifierForVendor?.uuidString
-    
-    private func initialize(){
+        setupSubviews()
+        applyConstraints()
+        
         view.backgroundColor = UIColor.rgb(red: 207, green: 105, blue: 255)
         UserDefaultsSettings.setupDeviceId = deviceId
+    }
+    
+    private func setupSubviews() {
         view.addSubview(loaderImageView)
     }
-   private let loaderImageView: UIImageView = {
-        let loader = UIImageView()
-       loader.image = UIImage(named: "BabyLogo")
-       
-        
-        return loader
-    }()
-    private func setupConstraints(){
+    
+    private func applyConstraints() {
         loaderImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -44,6 +40,14 @@ class LoaderViewController: UIViewController {
             make.width.equalTo(375)
             
         }
+    }
+}
+
+private extension LoaderViewController {
+    var _loaderImageView: UIImageView {
+        let result = UIImageView()
+        result.image = UIImage(named: "BabyLogo")
+        return result
     }
     
 }

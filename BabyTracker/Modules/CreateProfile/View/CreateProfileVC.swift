@@ -151,8 +151,7 @@ class CreateProfileVC: UIViewController {
 
 // MARK: -> Extension
 
-extension CreateProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-}
+extension CreateProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{}
 
 extension CreateProfileVC: UITextFieldDelegate {
     

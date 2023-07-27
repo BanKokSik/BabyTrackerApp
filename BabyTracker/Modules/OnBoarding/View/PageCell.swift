@@ -16,13 +16,32 @@ class PageCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         backgroundColor = .white
-        layout()
+        
+        setupSubviews()
+        applyConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSubviews() {
+        addSubview(imageView)
+        addSubview(textLabel)
+    }
+    
+    private func applyConstraints() {
+        imageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(70)
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(555)
+        }
+        
+        textLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(52)
+            make.leading.trailing.equalToSuperview().inset(60)
+        }
     }
     
     func update(image: UIImage, text: String) {
@@ -31,7 +50,7 @@ class PageCell: UICollectionViewCell {
     }
 }
 
-extension PageCell {
+private extension PageCell {
     
     var _imageView: UIImageView {
         let imageView = UIImageView()
@@ -48,19 +67,4 @@ extension PageCell {
         return label
     }
     
-    func layout() {
-        addSubview(imageView)
-        addSubview(textLabel)
-        
-        imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(70)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.height.equalTo(555)
-        }
-        
-        textLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(52)
-            make.leading.trailing.equalToSuperview().inset(60)
-        }
-    }
 }

@@ -33,7 +33,7 @@ final class LoaderCoordinator: Coordinator {
     
     func entry() -> UIViewController {
         guard let viewController = viewController as? LoaderViewController else {
-            fatalError("viewController is not PageViewController")
+            fatalError("viewController is not LoaderViewController")
         }
         return viewController
     }

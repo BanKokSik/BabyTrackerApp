@@ -16,7 +16,7 @@ final class AppCoordinator: NSObject, Coordinator {
     private let window: UIWindow
     
     private var onboardingCoordinator: OnboardingCoordinator?
-
+    
     private var loaderCoordinator: LoaderCoordinator?
     private var registrationCoordinator: RegistrationCoordinator?
     private var createProfileCoordinator: CreateProfileCoordinator?
@@ -32,7 +32,6 @@ final class AppCoordinator: NSObject, Coordinator {
     func start() {
         let loaderCoordinator = LoaderCoordinator(navController: navController, parent: self)
         loaderCoordinator.start()
-//        loaderCoordinator.delegate = self
         self.loaderCoordinator = loaderCoordinator
         window.rootViewController = loaderCoordinator.entry()
         window.makeKeyAndVisible()
@@ -44,15 +43,6 @@ final class AppCoordinator: NSObject, Coordinator {
             }
             
         }
-        
-//        let onboardingCoordinator = OnboardingCoordinator(navController: navController, parent: self)
-//        onboardingCoordinator.start()
-//        onboardingCoordinator.delegate = self
-//        self.onboardingCoordinator = onboardingCoordinator
-//        window.rootViewController = onboardingCoordinator.entry()
-//        window.makeKeyAndVisible()
-//
-//        childCoordinators.append(onboardingCoordinator)
         
     }
     
@@ -73,7 +63,7 @@ final class AppCoordinator: NSObject, Coordinator {
         self.onboardingCoordinator = onboardingCoordinator
         window.rootViewController = onboardingCoordinator.entry()
         window.makeKeyAndVisible()
-
+        
         childCoordinators.append(onboardingCoordinator)
     }
     
@@ -115,7 +105,6 @@ extension AppCoordinator: OnboardingCoordinatorDelegate {
 extension AppCoordinator: RegistrationCoordinatorDelegate {
     func registrationModuleDidFinish() {
         installCreateProfileCoordinator()
-        print("Делегат регистрации")
     }
 }
 
@@ -128,8 +117,8 @@ extension AppCoordinator: CreateProfileCoordinatorDelegate {
 extension AppCoordinator: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-            !navigationController.viewControllers.contains(fromViewController) else {
-                return
+              !navigationController.viewControllers.contains(fromViewController) else {
+            return
         }
         
         if let viewController = fromViewController as? Coordinatable {

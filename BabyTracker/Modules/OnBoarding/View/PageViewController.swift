@@ -41,22 +41,75 @@ class PageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        layout()
+        setupSubviews()
+        applyConstraints()
         configureSwipes()
     }
     
-    func scrollToItem(index: Int, _ collectionView: UICollectionView) {
+    private func setupSubviews() {
+        view.addSubview(collectionView)
+        view.addSubview(pageControl)
+        view.addSubview(nextButton)
+    }
+    
+    private func applyConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.width.equalToSuperview()
+            make.height.equalTo(710)
+        }
+        
+        pageControl.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(190)
+            make.centerX.equalToSuperview()
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(60)
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(70)
+        }
+    }
+    
+    private func scrollToItem(index: Int, _ collectionView: UICollectionView) {
         guard index < presenter.pages.count else { return }
         
         let indexPath = IndexPath(item: index, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
+    private func configureSwipes() {
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+        swipeLeftGesture.direction = .left
+        view.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
+        swipeRightGesture.direction = .right
+        view.addGestureRecognizer(swipeRightGesture)
+    }
+    
+    private func swipeOrFinishOnbording() -> Int {
+        let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
+        
+        if nextIndex != presenter.pages.count {
+            pageControl.currentPage = nextIndex
+            scrollToItem(index: nextIndex, collectionView)
+        } else {
+            onboardingCoordinator?.didFinish()
+        }
+        return nextIndex
+    }
+    
+   private func setPage(index: Int) {
+        pageControl.currentPage = index
+        scrollToItem(index: index, collectionView)
+    }
+    
     @objc func handleSwipeLeft() {
         let nextIndex = swipeOrFinishOnbording()
         setPage(index: nextIndex)
     }
-
+    
     @objc func handleSwipeRight() {
         let previousIndex = presenter.previousPageIndex(pageControl.currentPage)
         setPage(index: previousIndex)
@@ -70,22 +123,6 @@ class PageViewController: UIViewController {
         _ = swipeOrFinishOnbording()
     }
     
-    func swipeOrFinishOnbording() -> Int {
-        let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
-        
-        if nextIndex != presenter.pages.count {
-            pageControl.currentPage = nextIndex
-            scrollToItem(index: nextIndex, collectionView)
-        } else {
-            onboardingCoordinator?.didFinish()
-        }
-        return nextIndex
-    }
-    
-    func setPage(index: Int) {
-        pageControl.currentPage = index
-        scrollToItem(index: index, collectionView)
-    }
 }
 
 extension PageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -93,7 +130,7 @@ extension PageViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.pages.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCell.reuseIdentifier, for: indexPath) as! PageCell
         let pageItem = presenter.pages[indexPath.item]
@@ -109,7 +146,7 @@ extension PageViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension PageViewController {
+private extension PageViewController {
     
     var _pageControl: UIPageControl {
         let pageControl = UIPageControl()
@@ -146,38 +183,5 @@ extension PageViewController {
         collectionView.dataSource = self
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: PageCell.reuseIdentifier)
         return collectionView
-    }
-    
-    func configureSwipes() {
-        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
-        swipeLeftGesture.direction = .left
-        view.addGestureRecognizer(swipeLeftGesture)
-        
-        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
-        swipeRightGesture.direction = .right
-        view.addGestureRecognizer(swipeRightGesture)
-    }
-    
-    func layout() {
-        view.addSubview(collectionView)
-        view.addSubview(pageControl)
-        view.addSubview(nextButton)
-        
-        collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.width.equalToSuperview()
-            make.height.equalTo(710)
-        }
-        
-        pageControl.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(190)
-            make.centerX.equalToSuperview()
-        }
-        
-        nextButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(60)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.height.equalTo(70)
-        }
     }
 }

@@ -10,11 +10,6 @@ import SnapKit
 
 class CustomSwitch: UIControl {
     
-    // Public properties
-    var thumbSize: CGSize = CGSize(width: 14, height: 14)
-    var trackHeight: CGFloat = 6
-    var trackWidth: CGFloat = 25
-    
     var isOn: Bool = false {
         didSet {
             sendActions(for: .valueChanged)
@@ -23,36 +18,38 @@ class CustomSwitch: UIControl {
     }
     
     // Private properties
-    private let trackView = UIView()
-    private let thumbView = UIView()
+    private lazy var trackView: UIView = _trackView
+    private lazy var thumbView: UIView = _thumbView
     
-    private let offTrackColor = R.color.trackOff()
-    private let offThumbColor = R.color.thumbOff()
-    private let onTrackColor = R.color.trackOn()
-    private let onThumbColor = R.color.thumbOn()
+    private let thumbSize: CGSize = CGSize(width: 14, height: 14)
+    private let trackHeight: CGFloat = 6
+    private let trackWidth: CGFloat = 25
     
     // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupGesture()
+        setupSubviews()
+        applyConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupViews()
-        setupGesture()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateThumbPosition()
+    }
+        
     // MARK: - Setup
     
-    private func setupViews() {
-        trackView.layer.cornerRadius = trackHeight / 2
+    private func setupSubviews() {
         addSubview(trackView)
-        
-        thumbView.layer.cornerRadius = thumbSize.height / 2
         addSubview(thumbView)
+    }
+    
+    private func applyConstraints() {
         
         trackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -89,12 +86,24 @@ class CustomSwitch: UIControl {
             make.leading.equalToSuperview().offset(xPosition)
         }
         
-        trackView.backgroundColor = isOn ? onTrackColor : offTrackColor
-        thumbView.backgroundColor = isOn ? onThumbColor : offThumbColor
+        trackView.backgroundColor = isOn ? R.color.trackOn() : R.color.trackOff()
+        thumbView.backgroundColor = isOn ? R.color.thumbOn() : R.color.thumbOff()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateThumbPosition()
+}
+
+private extension CustomSwitch {
+    
+    var _trackView: UIView {
+        let result = UIView()
+        result.layer.cornerRadius = trackHeight / 2
+        return result
     }
+    
+    var _thumbView: UIView {
+        let result = UIView()
+        result.layer.cornerRadius = thumbSize.height / 2
+        return result
+    }
+    
 }

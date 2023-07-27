@@ -26,7 +26,7 @@
 		901BED6C2A64375000954E2E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901BED6B2A64375000954E2E /* SubscriptionViewController.swift */; };
 		90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F832A5DE2D900DA431D /* PopupViewController.swift */; };
 		90464F882A5EEB9A00DA431D /* PopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F872A5EEB9A00DA431D /* PopupPresenter.swift */; };
-		90464F8B2A5FDE0600DA431D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8A2A5FDE0600DA431D /* NetworkManager.swift */; };
+		90464F8B2A5FDE0600DA431D /* AuthNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */; };
 		90464F8E2A63293300DA431D /* PopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8D2A63293300DA431D /* PopupModel.swift */; };
 		906160972A69243000715C64 /* SubscriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160962A69243000715C64 /* SubscriptionCoordinator.swift */; };
 		9061609A2A6A672A00715C64 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160992A6A672A00715C64 /* CustomTextField.swift */; };
@@ -75,7 +75,7 @@
 		903FA61F2A51E6690066CC4F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90464F832A5DE2D900DA431D /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		90464F872A5EEB9A00DA431D /* PopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresenter.swift; sourceTree = "<group>"; };
-		90464F8A2A5FDE0600DA431D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetwork.swift; sourceTree = "<group>"; };
 		90464F8D2A63293300DA431D /* PopupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModel.swift; sourceTree = "<group>"; };
 		906160962A69243000715C64 /* SubscriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCoordinator.swift; sourceTree = "<group>"; };
 		906160982A69274000715C64 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4B7D69C62A65595500EF3F75 /* Customs */ = {
+		4B7D69C62A65595500EF3F75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				90CDD7A12A5DDFEB00945581 /* Buttons */,
@@ -141,7 +141,7 @@
 				906160A12A6DD2C500715C64 /* BorderView.swift */,
 				906160A32A6DD31500715C64 /* CustomNavigationController.swift */,
 			);
-			path = Customs;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		80BB3ABA2A697A6300E05642 /* Loader */ = {
@@ -281,12 +281,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		90464F892A5FDDE500DA431D /* Network */ = {
+		90464F892A5FDDE500DA431D /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				90464F8A2A5FDE0600DA431D /* NetworkManager.swift */,
+				90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */,
 			);
-			path = Network;
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		90464F8C2A63291200DA431D /* Model */ = {
@@ -417,9 +417,9 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
-				90464F892A5FDDE500DA431D /* Network */,
+				90464F892A5FDDE500DA431D /* NetworkManager */,
 				9067B00F2A4EF394005723EE /* App */,
-				4B7D69C62A65595500EF3F75 /* Customs */,
+				4B7D69C62A65595500EF3F75 /* Views */,
 				87E8F1DC2A6521FA0067B7E6 /* Storage */,
 				903FA6202A542EC50066CC4F /* Modules */,
 				9067B0112A4EF4C3005723EE /* Extensions */,
@@ -608,7 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90464F8B2A5FDE0600DA431D /* NetworkManager.swift in Sources */,
+				90464F8B2A5FDE0600DA431D /* AuthNetwork.swift in Sources */,
 				906160A42A6DD31500715C64 /* CustomNavigationController.swift in Sources */,
 				906160A72A6E83BF00715C64 /* SubscriptionModel.swift in Sources */,
 				90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */,
