@@ -16,6 +16,8 @@ final class AppCoordinator: NSObject, Coordinator {
     private let window: UIWindow
     
     private var onboardingCoordinator: OnboardingCoordinator?
+
+    private var loaderCoordinator: LoaderCoordinator?
     private var registrationCoordinator: RegistrationCoordinator?
     private var createProfileCoordinator: CreateProfileCoordinator?
     private var popupCoordinator: PopupCoordinator?
@@ -28,14 +30,30 @@ final class AppCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let onboardingCoordinator = OnboardingCoordinator(navController: navController, parent: self)
-        onboardingCoordinator.start()
-        onboardingCoordinator.delegate = self
-        self.onboardingCoordinator = onboardingCoordinator
-        window.rootViewController = onboardingCoordinator.entry()
+        let loaderCoordinator = LoaderCoordinator(navController: navController, parent: self)
+        loaderCoordinator.start()
+//        loaderCoordinator.delegate = self
+        self.loaderCoordinator = loaderCoordinator
+        window.rootViewController = loaderCoordinator.entry()
         window.makeKeyAndVisible()
-
-        childCoordinators.append(onboardingCoordinator)
+        childCoordinators.append(loaderCoordinator)
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.asyncAfter(deadline: .now() + 3.0) {
+            DispatchQueue.main.async {
+                self.installOnbordingCoordinator()
+            }
+            
+        }
+        
+//        let onboardingCoordinator = OnboardingCoordinator(navController: navController, parent: self)
+//        onboardingCoordinator.start()
+//        onboardingCoordinator.delegate = self
+//        self.onboardingCoordinator = onboardingCoordinator
+//        window.rootViewController = onboardingCoordinator.entry()
+//        window.makeKeyAndVisible()
+//
+//        childCoordinators.append(onboardingCoordinator)
+        
     }
     
     func entry() -> UIViewController {
@@ -46,6 +64,17 @@ final class AppCoordinator: NSObject, Coordinator {
         onboardingCoordinator = nil
         registrationCoordinator = nil
         createProfileCoordinator = nil
+    }
+    
+    private func installOnbordingCoordinator(){
+        let onboardingCoordinator = OnboardingCoordinator(navController: navController, parent: self)
+        onboardingCoordinator.start()
+        onboardingCoordinator.delegate = self
+        self.onboardingCoordinator = onboardingCoordinator
+        window.rootViewController = onboardingCoordinator.entry()
+        window.makeKeyAndVisible()
+
+        childCoordinators.append(onboardingCoordinator)
     }
     
     private func installRegistrationCoordinator() {
@@ -86,6 +115,7 @@ extension AppCoordinator: OnboardingCoordinatorDelegate {
 extension AppCoordinator: RegistrationCoordinatorDelegate {
     func registrationModuleDidFinish() {
         installCreateProfileCoordinator()
+        print("Делегат регистрации")
     }
 }
 

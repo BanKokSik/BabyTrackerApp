@@ -453,9 +453,6 @@ struct _R {
     /// Color `TorquoiseBlue`.
     var torquoiseBlue: RswiftResources.ColorResource { .init(name: "TorquoiseBlue", path: [], bundle: bundle) }
 
-    /// Color `TrackOff`.
-    var trackOff: RswiftResources.ColorResource { .init(name: "TrackOff", path: [], bundle: bundle) }
-
     /// Color `TrackOn`.
     var trackOn: RswiftResources.ColorResource { .init(name: "TrackOn", path: [], bundle: bundle) }
 
@@ -470,9 +467,12 @@ struct _R {
 
     /// Color `YellowOrange`.
     var yellowOrange: RswiftResources.ColorResource { .init(name: "YellowOrange", path: [], bundle: bundle) }
+
+    /// Color `trackOff`.
+    var trackOff: RswiftResources.ColorResource { .init(name: "trackOff", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 12 images.
+  /// This `_R.image` struct is generated, and contains static references to 14 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -509,8 +509,14 @@ struct _R {
     /// Image `OnBoardingPage4`.
     var onBoardingPage4: RswiftResources.ImageResource { .init(name: "OnBoardingPage4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `PhotoImage`.
+    var photoImage: RswiftResources.ImageResource { .init(name: "PhotoImage", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `icons`.
     var icons: RswiftResources.ImageResource { .init(name: "icons", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `slide`.
+    var slide: RswiftResources.ImageResource { .init(name: "slide", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.

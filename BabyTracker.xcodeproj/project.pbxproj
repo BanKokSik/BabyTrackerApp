@@ -13,6 +13,8 @@
 		4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */; };
 		4B7D69CF2A65690800EF3F75 /* CreateProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CE2A65690800EF3F75 /* CreateProfileCoordinator.swift */; };
 		808C0B492A45D51000AEC365 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C0B482A45D51000AEC365 /* Extension.swift */; };
+		80BB3AB92A68198300E05642 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB3AB82A68198300E05642 /* LoaderViewController.swift */; };
+		80BB3ABF2A697AA800E05642 /* LoaderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */; };
 		87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1DD2A6521FA0067B7E6 /* UserDefaultsSettings.swift */; };
 		87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1E42A652A130067B7E6 /* RegistrationPresenter.swift */; };
 		87E8F1EF2A652A130067B7E6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8F1E62A652A130067B7E6 /* RegisterViewController.swift */; };
@@ -59,6 +61,8 @@
 		4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		4B7D69CE2A65690800EF3F75 /* CreateProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileCoordinator.swift; sourceTree = "<group>"; };
 		808C0B482A45D51000AEC365 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		80BB3AB82A68198300E05642 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCoordinator.swift; sourceTree = "<group>"; };
 		87E8F1DD2A6521FA0067B7E6 /* UserDefaultsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettings.swift; sourceTree = "<group>"; };
 		87E8F1E42A652A130067B7E6 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		87E8F1E62A652A130067B7E6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,23 @@
 			path = Customs;
 			sourceTree = "<group>";
 		};
+		80BB3ABA2A697A6300E05642 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				80BB3ABC2A697A7B00E05642 /* View */,
+				80BB3ABE2A697AA800E05642 /* LoaderCoordinator.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		80BB3ABC2A697A7B00E05642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80BB3AB82A68198300E05642 /* LoaderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		87E8F1DC2A6521FA0067B7E6 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +233,7 @@
 		903FA6202A542EC50066CC4F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				80BB3ABA2A697A6300E05642 /* Loader */,
 				903FA6212A542EE30066CC4F /* OnBoarding */,
 				87E8F1E22A652A130067B7E6 /* Registration */,
 				87E8F1E72A652A130067B7E6 /* CreateProfile */,
@@ -600,6 +622,7 @@
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
 				87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */,
 				87E8F1F02A652A130067B7E6 /* CreateProfilePresenter.swift in Sources */,
+				80BB3ABF2A697AA800E05642 /* LoaderCoordinator.swift in Sources */,
 				90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */,
 				90464F8E2A63293300DA431D /* PopupModel.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
@@ -611,6 +634,7 @@
 				4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */,
 				87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */,
 				4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */,
+				80BB3AB92A68198300E05642 /* LoaderViewController.swift in Sources */,
 				87E8F1F12A652A130067B7E6 /* Model.swift in Sources */,
 				90FF22DB2A685BFF004A166C /* RegistrationCoordinator.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,

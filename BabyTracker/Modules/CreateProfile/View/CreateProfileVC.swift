@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+
 protocol CreateProfileVCDelegate: AnyObject {}
 
 class CreateProfileVC: UIViewController {
@@ -43,8 +44,7 @@ class CreateProfileVC: UIViewController {
     weak var delegate: CreateProfileVCDelegate?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         addDelegate()
         initialaze()
     }
@@ -129,6 +129,7 @@ class CreateProfileVC: UIViewController {
     }
     
     @objc func imageTapped(tapRecognizer: UITapGestureRecognizer){
+
         alertImageView()
     }
     
@@ -178,6 +179,7 @@ extension CreateProfileVC: UITextFieldDelegate {
         }
     }
     
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 1:
@@ -204,6 +206,13 @@ extension CreateProfileVC: UITextFieldDelegate {
             makeBorderActive(birthDateBorder, isActive: false)
         default: break
         }
+    }
+}
+// MARK: -> Add Subviews
+extension CreateProfileVC {
+    private func addViewOnSubview() {
+        view.addSubview(createImageView)
+        view.addSubview(userAgreement)
     }
 }
 
