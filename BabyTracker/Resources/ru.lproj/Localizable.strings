@@ -6,8 +6,62 @@
   
 */
 
+// MARK: - Buttons
 "NextButton" = "Далее";
+"CreateProfileButton" = "Создать профиль";
+"LogInWithAppleButton" = "Войти с Apple";
+"EnterTheCodeButton" = "Ввести код";
+"RestoreFromTheCloudButton" = "Восстановить из облака"; // retrieve, recover
+"SubscribeButton" = "Подписаться";
+"DeleteRelativeButton" = "Удалить родственника";
+"CancelDeletionButton" = "Отменить удаление";
+
+
+// MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
 "OnbordingLabelPage1" = "Планируйте развитие";
 "OnbordingLabelPage2" = "Сохраняйте моменты";
 "OnbordingLabelPage3" = "Следите за показателями";
 "OnbordingLabelPage4" = "Получайте рекомендации";
+
+
+// MARK: - Creation profile (Screen 4)
+"AlertMessageToAddImage" = "Выберите способ загрузки фотографии";
+"AlertActionCamera" = "Камера";
+"AlertActionGallery" = "Галерея";
+"AlertActionCancel" = "Отменить";
+"NamePlaceholder" = "Введите имя";
+"GenderPlaceholder" = "Пол";
+"BirthDatePlaceholder" = "Дата рождения";
+"MetricSystemSwitcher" = "Метрическая система";
+"UserAgreementTextView" = "Нажимая «Далее», вы подтверждаете, что прочитали и приняли наши Условия и Политику конфиденциальности.";
+"TermsLabel" = "Условия";
+"TermsLink" = "http://stackoverflow.com";
+"PrivacyPolicyLabel" = "Политику конфиденциальности";
+"PrivacyPolicyLink" = "https://www.google.com";
+
+
+// MARK: - Gender page (Screen 4 (pop ap))
+"GenderBoyLabel" = "Мальчик";
+"GenderGirlLabel" = "Девочка";
+
+
+// MARK: - Subscriptions (Screen 7)
+"RestoreButton" = "Восстановить";
+"AdvantagesOfSubscriptionsTextView" =
+"
+Безлимитные фото\n
+Прививки и медосмотры\n
+Родственники\n
+Советы по развитию\n
+Дизайнерские альбомы
+";
+"SubscriptionForAYearLabel" = "7 дней бесплатно";
+"SubscriptionForAYearPriceLabel" = "затем 799р в год";
+"DescribeSubscriptionForAYearTextView" = "Условия подписки: 1 год использования платной версии приложения за 799 Р и автоматическое продление через год";
+"PopularPlaceholderLabel" = "Популярное";
+"SubscriptionForAMonthLabel" = "1 месяц";
+"SubscriptionForAMonthPriceLabel" = "199р в месяц";
+"DescribeSubscriptionForAMonthTextView" = "Условия подписки: 1 месяц использования платной версии приложения за 199 Р и автоматическое продление через месяц";
+"SubscriptionForeverLabel" = "Навсегда";
+"SubscriptionForeverPriceLabel" = "4980р / 2490р";
+"DescribeSubscriptionForeverTextView" = "Условия подписки: можно приобрести платную версию приложения единоразово и навсегда за 2499 Р вместо 4980 Р";

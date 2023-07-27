@@ -12,15 +12,18 @@ final class AppCoordinator: NSObject, Coordinator {
     weak var parent: Coordinator?
     var childCoordinators: [Coordinator] = []
     
-    private let navController: UINavigationController
+    private let navController: CustomNavigationController
     private let window: UIWindow
     
     private var onboardingCoordinator: OnboardingCoordinator?
-    private var registerCoordinator: RegisterCoordinator?
-    private var createProfileCoordinator: CreateProfileCoordinator?
+
     private var loaderCoordinator: LoaderCoordinator?
+    private var registrationCoordinator: RegistrationCoordinator?
+    private var createProfileCoordinator: CreateProfileCoordinator?
+    private var popupCoordinator: PopupCoordinator?
+    private var subscriptionCoordinator: SubscriptionCoordinator?
     
-    init(navController: UINavigationController = UINavigationController(),
+    init(navController: CustomNavigationController = CustomNavigationController(),
          windowScene: UIWindowScene) {
         self.navController = navController
         self.window = UIWindow(windowScene: windowScene)
@@ -59,7 +62,7 @@ final class AppCoordinator: NSObject, Coordinator {
     
     private func removeAllSubmodules() {
         onboardingCoordinator = nil
-        registerCoordinator = nil
+        registrationCoordinator = nil
         createProfileCoordinator = nil
     }
     
@@ -73,40 +76,52 @@ final class AppCoordinator: NSObject, Coordinator {
 
         childCoordinators.append(onboardingCoordinator)
     }
-    private func installRegisterCoordinator() {
-        let registrationCoordinator = RegisterCoordinator(navController: navController, parent: self)
+    
+    private func installRegistrationCoordinator() {
+        let registrationCoordinator = RegistrationCoordinator(navController: navController, parent: self)
         registrationCoordinator.start()
         registrationCoordinator.delegate = self
         removeAllSubmodules()
-        self.registerCoordinator = registrationCoordinator
+        self.registrationCoordinator = registrationCoordinator
+        
         navController.viewControllers = [registrationCoordinator.entry()]
         window.rootViewController = navController
-        print("Устанавливаем Экран регистрации")
     }
-    private func installCreateProfileCoordinator(){
+    
+    private func installCreateProfileCoordinator() {
         let createProfileCoordinator = CreateProfileCoordinator(navController: navController, parent: self)
         createProfileCoordinator.start()
-        
-//        removeAllSubmodules()
+        createProfileCoordinator.delegate = self
         self.createProfileCoordinator = createProfileCoordinator
         navController.pushViewController(createProfileCoordinator.entry(), animated: true)
-//        window.rootViewController = createProfileCoordinator.entry()
+        
         childCoordinators.append(createProfileCoordinator)
-        print("Устанавливаем Экран создания профиля")
+    }
+    
+    private func installSubscriptionCoordinator() {
+        let subscriptionCoordinator = SubscriptionCoordinator(navController: navController, parent: self)
+        subscriptionCoordinator.start()
+        subscriptionCoordinator.presentSubscriptionsPopup()
+        self.subscriptionCoordinator = subscriptionCoordinator
     }
 }
 
 extension AppCoordinator: OnboardingCoordinatorDelegate {
     func onboardingModuleDidFinish() {
-        installRegisterCoordinator()
-        print("Делегат онбординг")
+        installRegistrationCoordinator()
     }
-    
 }
-extension AppCoordinator: RegisterCoordinatorDelegate{
-    func registerModuleDidFinfsh() {
+
+extension AppCoordinator: RegistrationCoordinatorDelegate {
+    func registrationModuleDidFinish() {
         installCreateProfileCoordinator()
         print("Делегат регистрации")
+    }
+}
+
+extension AppCoordinator: CreateProfileCoordinatorDelegate {
+    func createProfileModuleDidFinish() {
+        installSubscriptionCoordinator()
     }
 }
 

@@ -2,25 +2,24 @@
 //  RegistrationCoordinator.swift
 //  BabyTracker
 //
-//  Created by Nikita Chekmarev on 17.07.2023.
+//  Created by Мявкo on 18.07.23.
 //
 
 import UIKit
-protocol RegisterCoordinatorDelegate: AnyObject{
-    func registerModuleDidFinfsh()
+
+protocol RegistrationCoordinatorDelegate: AnyObject {
+    func registrationModuleDidFinish()
 }
 
-final class RegisterCoordinator: Coordinator {
+final class RegistrationCoordinator: Coordinator {
+    weak var parent: Coordinator?
     var childCoordinators: [Coordinator] = []
-    
-    var parent: Coordinator?
-   weak var delegate: RegisterCoordinatorDelegate?
+    weak var delegate: RegistrationCoordinatorDelegate?
     
     private let navController: UINavigationController
     private var viewController: UIViewController?
     
-   
-    init(navController: UINavigationController , parent: Coordinator? = nil) {
+    init(navController: UINavigationController, parent: Coordinator? = nil) {
         self.navController = navController
         self.parent = parent
     }
@@ -29,21 +28,16 @@ final class RegisterCoordinator: Coordinator {
         let viewController = RegisterViewController()
         viewController.coordinator = self
         self.viewController = viewController
-        
-        
     }
     
     func entry() -> UIViewController {
         guard let viewController = viewController as? RegisterViewController else {
-            fatalError("viewController is not CreateProfileVC")
+            fatalError("viewController is not RegisterViewController")
         }
         return viewController
     }
-    func didFinish(){
-        delegate?.registerModuleDidFinfsh()
-        print("Финишируем")
-        
+    
+    func didFinish() {
+        delegate?.registrationModuleDidFinish()
     }
-    
-    
 }

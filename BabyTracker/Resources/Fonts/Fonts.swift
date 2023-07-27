@@ -21,11 +21,16 @@ struct Fonts {
     static let gilroyRegular22 = R.font.gilroyRegular(size: 22)
     
     static let gilroyRegular18 = R.font.gilroyRegular(size: 18)
+    static let gilroyMedium18 = R.font.gilroyMedium(size: 18)
     static let gilroySemiBold18 = R.font.gilroySemiBold(size: 18)
     
     static let gilroyMedium15 = R.font.gilroyMedium(size: 15)
     static let gilroyRegular14 = R.font.gilroyRegular(size: 14)
+    static let gilroyMedium14 = R.font.gilroyMedium(size: 14)
     static let gilroyRegular12 = R.font.gilroyRegular(size: 12)
+    
     static let gilroyRegular11 = R.font.gilroyRegular(size: 11)
+    static let gilroyMedium11 = R.font.gilroyMedium(size: 11)
+    static let gilroySemiBold11 = R.font.gilroySemiBold(size: 11)
     
 }

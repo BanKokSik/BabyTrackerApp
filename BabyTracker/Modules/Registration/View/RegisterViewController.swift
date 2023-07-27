@@ -8,10 +8,21 @@
 import UIKit
 import SnapKit
 
-class RegisterViewController: UIViewController {
-    weak var coordinator: Coordinator?
-    private var registerCoordinator: RegisterCoordinator? { coordinator as? RegisterCoordinator }
+protocol RegisterViewControllerDelegate: AnyObject {
     
+}
+
+protocol RegisterViewProtocol: AnyObject {
+    
+}
+
+class RegisterViewController: UIViewController {
+
+    weak var delegate: RegisterViewControllerDelegate?
+    
+    weak var coordinator: Coordinator?
+    private var registrationCoordinator: RegistrationCoordinator? { coordinator as? RegistrationCoordinator }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +34,6 @@ class RegisterViewController: UIViewController {
     private lazy var createProfileButton: UIButton = _createProfileButton
     private lazy var enterCodeButton: UIButton = _enterCodeButton
     private lazy var restoreCloudButton: UIButton = _restoreCloudButton
-    
-    
     
     private func setupConstraints () {
         createProfileButton.snp.makeConstraints { make in
@@ -55,13 +64,9 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func createProfileButtonTapped(){
-        registerCoordinator?.didFinish()
-        print("Нажали на кнопочку")
-        
+        registrationCoordinator?.didFinish()
     }
 }
-
-
 
 extension RegisterViewController {
     
