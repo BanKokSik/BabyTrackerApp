@@ -38,6 +38,7 @@
 		906160A92A6E83D000715C64 /* SubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160A82A6E83D000715C64 /* SubscriptionPresenter.swift */; };
 		908887102A4A09E400B8F04C /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088870F2A4A09E400B8F04C /* PageCell.swift */; };
 		90943D5E2A51DC1400763063 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90943D602A51DC1400763063 /* Localizable.strings */; };
+		90A74F652A7829D500DFCC85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A74F642A7829D500DFCC85 /* BaseViewController.swift */; };
 		90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDD7A22A5DDFFE00945581 /* BaseButton.swift */; };
 		90CDD7A52A5DE03500945581 /* ColorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDD7A42A5DE03500945581 /* ColorButtons.swift */; };
 		90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2CBB82A45B4CF00B116BE /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		9088870F2A4A09E400B8F04C /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		90943D5F2A51DC1400763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90943D622A51DD1B00763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		90A74F642A7829D500DFCC85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		90CDD7A22A5DDFFE00945581 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		90CDD7A42A5DE03500945581 /* ColorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButtons.swift; sourceTree = "<group>"; };
 		90E2CBB52A45B4CF00B116BE /* BabyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,6 +388,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		90A74F632A7829C200DFCC85 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				90A74F642A7829D500DFCC85 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		90CDD7A12A5DDFEB00945581 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +427,7 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				90A74F632A7829C200DFCC85 /* Base */,
 				90464F892A5FDDE500DA431D /* NetworkManager */,
 				9067B00F2A4EF394005723EE /* App */,
 				4B7D69C62A65595500EF3F75 /* Views */,
@@ -631,6 +642,7 @@
 				87E8F1F22A652A130067B7E6 /* CreateProfileVC.swift in Sources */,
 				9061609A2A6A672A00715C64 /* CustomTextField.swift in Sources */,
 				87E8F1EF2A652A130067B7E6 /* RegisterViewController.swift in Sources */,
+				90A74F652A7829D500DFCC85 /* BaseViewController.swift in Sources */,
 				4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */,
 				87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */,
 				4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */,

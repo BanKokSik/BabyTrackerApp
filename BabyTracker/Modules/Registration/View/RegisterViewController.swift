@@ -8,16 +8,12 @@
 import UIKit
 import SnapKit
 
-protocol RegisterViewControllerDelegate: AnyObject {
-    
-}
+protocol RegisterViewControllerDelegate: AnyObject {}
 
-protocol RegisterViewProtocol: AnyObject {
-    
-}
+protocol RegisterViewProtocol: AnyObject {}
 
-class RegisterViewController: UIViewController {
-    
+class RegisterViewController: BaseViewController {
+
     weak var delegate: RegisterViewControllerDelegate?
     
     weak var coordinator: Coordinator?
@@ -26,10 +22,10 @@ class RegisterViewController: UIViewController {
     private lazy var createProfileButton: UIButton = _createProfileButton
     private lazy var enterCodeButton: UIButton = _enterCodeButton
     private lazy var restoreCloudButton: UIButton = _restoreCloudButton
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+
         setupSubviews()
         applyConstraints()
     }
@@ -47,12 +43,14 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(69)
             make.top.equalToSuperview().inset(286)
         }
+        
         enterCodeButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(29)
             make.height.equalTo(71)
             make.top.equalTo(createProfileButton).inset(100)
         }
+        
         restoreCloudButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(29)
@@ -61,7 +59,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    @objc func createProfileButtonTapped(){
+    @objc private func createProfileButtonTapped(){
         registrationCoordinator?.didFinish()
     }
 }
@@ -70,29 +68,29 @@ extension RegisterViewController {
     
     var _createProfileButton: UIButton {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.rgb(red: 207, green: 104, blue: 255)
+        button.backgroundColor = R.color.heliotrope()
         button.layer.cornerRadius = 10
-        button.setTitle("Создать профиль", for: .normal)
+        button.setTitle(R.string.localizable.createProfileButton(), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
         return button
     }
-    var _enterCodeButton: UIButton  {
+    
+    var _enterCodeButton: UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("Ввести код", for: .normal)
-        button.setTitleColor(UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor.white
+        button.setTitle(R.string.localizable.enterTheCodeButton(), for: .normal)
+        button.setTitleColor(R.color.silver(), for: .normal)
+        button.backgroundColor = R.color.white()
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 10
-        button.layer.borderColor = CGColor.init(red: 180/255, green: 180/255, blue: 180/255, alpha: 0.1)
-        
-        return button
-    }
-    var _restoreCloudButton: UIButton  {
-        let button = UIButton(type: .system)
-        button.setTitle("Восстановить из облака", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.layer.borderColor = R.color.wildSand()?.cgColor
         return button
     }
     
+    var _restoreCloudButton: UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(R.string.localizable.restoreFromTheCloudButton(), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }
 }

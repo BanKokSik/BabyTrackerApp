@@ -12,9 +12,7 @@ protocol PopupPresenterDelegate: AnyObject {
     func didSelectGender(_ controller: PopupViewController, gender: Gender?)
 }
 
-protocol PopupViewControllerDelegate: AnyObject {
-    
-}
+protocol PopupViewControllerDelegate: AnyObject {}
 
 class PopupViewController: UIViewController {
     

@@ -15,7 +15,7 @@ enum Subscription {
 
 protocol SubscriptionViewControllerDelegate: AnyObject {}
 
-class SubscriptionViewController: UIViewController {
+class SubscriptionViewController: BaseViewController {
     
     weak var delegate: SubscriptionViewControllerDelegate?
     
@@ -54,8 +54,6 @@ class SubscriptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
         yearSubscriptionView.isActive = .active
         
         configureTapGestureViews()

@@ -11,7 +11,7 @@ import SnapKit
 
 protocol CreateProfileVCDelegate: AnyObject {}
 
-class CreateProfileVC: UIViewController {
+class CreateProfileVC: BaseViewController {
     
     weak var coordinator: Coordinator?
     private var createProfileCoordinator: CreateProfileCoordinator? { coordinator as? CreateProfileCoordinator }
@@ -45,8 +45,6 @@ class CreateProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
         addTapedImageView()
         addDatePickerInTextField()
     

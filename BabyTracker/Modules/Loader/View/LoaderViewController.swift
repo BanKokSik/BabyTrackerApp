@@ -21,10 +21,11 @@ class LoaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = R.color.heliotrope()
+        
         setupSubviews()
         applyConstraints()
         
-        view.backgroundColor = UIColor.rgb(red: 207, green: 105, blue: 255)
         UserDefaultsSettings.setupDeviceId = deviceId
     }
     
@@ -38,7 +39,6 @@ class LoaderViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.height.equalTo(296)
             make.width.equalTo(375)
-            
         }
     }
 }
@@ -49,5 +49,4 @@ private extension LoaderViewController {
         result.image = UIImage(named: "BabyLogo")
         return result
     }
-    
 }
