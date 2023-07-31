@@ -39,13 +39,31 @@ extension UIButton {
 
 extension NSMutableAttributedString{
     public func setAsLink(textToFind:String, linkURL:String) -> Bool {
-
-            let foundRange = self.mutableString.range(of: textToFind)
-            if foundRange.location != NSNotFound {
-                self.addAttribute(.link, value: linkURL, range: foundRange)
-               
-                return true
-            }
-            return false
+        let foundRange = self.mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            self.addAttribute(.link, value: linkURL, range: foundRange)
+           
+            return true
         }
+        return false
+    }
+}
+
+extension UITextView {
+    
+    func textWithSpaceBetweenLines(text: NSMutableAttributedString, space: Double) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = CGFloat(space)
+     
+        text.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: text.length))
+        return text
+    }
+    
+    func textWithSpaceBetweenLines(text: String, space: Double) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = space
+ 
+        let attributedText = NSAttributedString(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        return attributedText
+    }
 }

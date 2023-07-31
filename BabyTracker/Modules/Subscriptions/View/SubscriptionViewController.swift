@@ -7,9 +7,13 @@
 
 import UIKit
 
-protocol SubscriptionViewControllerDelegate: AnyObject {
-    
+enum Subscription {
+    case year
+    case month
+    case forever
 }
+
+protocol SubscriptionViewControllerDelegate: AnyObject {}
 
 class SubscriptionViewController: UIViewController {
     
@@ -46,7 +50,7 @@ class SubscriptionViewController: UIViewController {
     private lazy var nextButton: UIButton = _nextButton
     private lazy var descriptionTextView: UITextView = _descriptionTextView
 
-    var period: Subscription = .year
+    private var period: Subscription = .year
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,18 +58,139 @@ class SubscriptionViewController: UIViewController {
         view.backgroundColor = .white
         yearSubscriptionView.isActive = .active
         
-        layout()
         configureTapGestureViews()
         setupNavigationBar()
+        
+        setupSubviews()
+        applyConstraints()
     }
     
-    func configureTapGestureViews() {
+    private func setupSubviews() {
+        containerView.addSubview(imageView)
+        containerView.addSubview(advantagesTextView)
+        view.addSubview(containerView)
+        
+        setupSubscription(yearSubscriptionView, period: .year)
+        setupSubscription(monthSubscriptionView, period: .month)
+        setupSubscription(foreverSubscriptionView, period: .forever)
+        
+        popularView.addSubview(popularLabel)
+        view.addSubview(popularView)
+        
+        view.addSubview(nextButton)
+        view.addSubview(descriptionTextView)
+    }
+    
+    private func applyConstraints() {
+        
+        // MARK: - Icons and TextView
+        
+        imageView.snp.makeConstraints { make in
+            make.width.equalTo(45)
+            make.leading.equalToSuperview()
+            make.top.equalToSuperview().inset(25)
+            make.height.equalTo(185)
+        }
+        
+        advantagesTextView.snp.makeConstraints { make in
+            make.leading.equalTo(imageView).inset(40)
+        }
+        
+        containerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(85)
+            make.leading.trailing.equalToSuperview().offset(30)
+        }
+        
+        // MARK: - Subscriptions
+        
+        yearSubscriptionView.snp.makeConstraints { make in
+            make.top.equalTo(containerView).offset(250)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(315)
+            make.height.equalTo(90)
+        }
+        
+        popularLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        popularView.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.top.equalTo(containerView).offset(235)
+            make.leading.equalToSuperview().inset(245)
+            make.trailing.equalToSuperview().inset(35)
+        }
+
+        monthSubscriptionView.snp.makeConstraints { make in
+            make.top.equalTo(yearSubscriptionView).offset(110)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(315)
+            make.height.equalTo(90)
+        }
+        
+        foreverSubscriptionView.snp.makeConstraints { make in
+            make.top.equalTo(monthSubscriptionView).offset(110)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(315)
+            make.height.equalTo(90)
+        }
+        
+        // MARK: - Button "Next"
+        
+        nextButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(115)
+            make.leading.trailing.equalToSuperview().inset(40)
+            make.height.equalTo(69)
+        }
+        
+        // MARK: - TextView "Description"
+        
+        descriptionTextView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(25)
+            make.leading.trailing.equalToSuperview().inset(33)
+            make.height.equalTo(80)
+        }
+    }
+    
+    private func setupSubscription(_ subscriptionView: BorderView, period: Subscription) {
+        let title = titleSubscriptionLabel
+        let price = priceSubscriptionLabel
+        
+        switch period {
+        case .year:
+            title.text = R.string.localizable.subscriptionForAYearLabel()
+            price.text = R.string.localizable.subscriptionForAYearPriceLabel()
+        case .month:
+            title.text = R.string.localizable.subscriptionForAMonthLabel()
+            price.text = R.string.localizable.subscriptionForAMonthPriceLabel()
+        case .forever:
+            title.text = R.string.localizable.subscriptionForeverLabel()
+            price.attributedText = strikethroughText
+        }
+        
+        subscriptionView.addSubview(title)
+        subscriptionView.addSubview(price)
+        view.addSubview(subscriptionView)
+        
+        title.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.top.equalToSuperview().inset(25)
+        }
+        
+        price.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(35)
+            make.top.equalTo(title).inset(28)
+        }
+    }
+    
+    private func configureTapGestureViews() {
         for i in 0...subscriptionsViews.count - 1 {
             configureTapGesture(for: subscriptionsViews[i], action: selectorsTap[i])
         }
     }
     
-    func configureTapGesture(for view: BorderView, action: Selector) {
+    private func configureTapGesture(for view: BorderView, action: Selector) {
         let tapGesture = UITapGestureRecognizer(target: self, action: action)
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
@@ -89,10 +214,9 @@ class SubscriptionViewController: UIViewController {
         changeDescription(for: period)
     }
     
-    @objc private func buttonNextIsTapped() {
-    }
+    @objc private func buttonNextIsTapped() {}
     
-    func toggleViewActiveState(_ viewIsTapped: BorderView) {
+    private func toggleViewActiveState(_ viewIsTapped: BorderView) {
         guard viewIsTapped.isActive != .active else { return }
         
         for view in subscriptionsViews {
@@ -105,17 +229,9 @@ class SubscriptionViewController: UIViewController {
         }
     }
     
-    func textWithSpaceBetweenLines(text: String, space: Double) -> NSAttributedString {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = space
- 
-        let attributedText = NSAttributedString(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        return attributedText
-    }
-    
     func setupNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: restoreButton)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton) //closeButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
     }
     
     @objc private func restoreButtonTapped() {
@@ -125,17 +241,32 @@ class SubscriptionViewController: UIViewController {
     @objc private func closeButtonTapped() {
        print("Закрыть")
     }
+    
+    private func changeDescription(for period: Subscription) {
+        switch period {
+        case .year:
+            descriptionTextView.text = R.string.localizable.describeSubscriptionForAYearTextView()
+        case .month:
+            descriptionTextView.text = R.string.localizable.describeSubscriptionForAMonthTextView()
+        case .forever:
+            descriptionTextView.text = R.string.localizable.describeSubscriptionForeverTextView()
+        }
+    }
+    
+    private var strikethroughText: NSMutableAttributedString {
+        let text = R.string.localizable.subscriptionForeverPriceLabel()
+        let attributedText = NSMutableAttributedString(string: text)
+
+        let range = (text as NSString).range(of: "4980р")
+        attributedText.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        return attributedText
+    }
 }
 
-enum Subscription {
-    case year
-    case month
-    case forever
-}
-
-extension SubscriptionViewController {
+private extension SubscriptionViewController {
     
     // MARK: - Navigation Bar
+    
     var _restoreButton: UIButton {
         let restoreAttributes: [NSAttributedString.Key: Any] = [.font: Fonts.gilroyRegular14!]
         let restoreAttributedString = NSAttributedString(string: R.string.localizable.restoreButton(), attributes: restoreAttributes)
@@ -163,13 +294,7 @@ extension SubscriptionViewController {
         return closeButton
     }
     
-    func layout() {
-        layoutIconsAndText()
-        layoutViews()
-        layoutButtonAndDescription()
-    }
-    
-    // MARK: - Advantages of subscription
+    // MARK: - Advantages of subscription (Icons and TextView)
     
     var _containerView: UIView {
         let view = UIView()
@@ -178,7 +303,7 @@ extension SubscriptionViewController {
     
     var _advantagesTextView: UITextView {
         let textView = UITextView()
-        textView.attributedText = textWithSpaceBetweenLines(text: R.string.localizable.advantagesOfSubscriptionsTextView(), space: -0.7)
+        textView.attributedText = textView.textWithSpaceBetweenLines(text: R.string.localizable.advantagesOfSubscriptionsTextView(), space: -0.7)
         textView.font = Fonts.gilroyRegular18
         textView.isEditable = false
         textView.isScrollEnabled = false
@@ -190,28 +315,6 @@ extension SubscriptionViewController {
         imageView.image = R.image.icons()
         imageView.contentMode = .scaleAspectFit
         return imageView
-    }
-    
-    func layoutIconsAndText() {
-        containerView.addSubview(imageView)
-        containerView.addSubview(advantagesTextView)
-        view.addSubview(containerView)
-        
-        imageView.snp.makeConstraints { make in
-            make.width.equalTo(45)
-            make.leading.equalToSuperview()
-            make.top.equalToSuperview().inset(25)
-            make.height.equalTo(185)
-        }
-        
-        advantagesTextView.snp.makeConstraints { make in
-            make.leading.equalTo(imageView).inset(40)
-        }
-        
-        containerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(85)
-            make.leading.trailing.equalToSuperview().offset(30)
-        }
     }
     
     // MARK: - Subscriptions
@@ -279,86 +382,6 @@ extension SubscriptionViewController {
         return label
     }
     
-    func setupView(_ subscriptionView: BorderView, period: Subscription) {
-        let title = titleSubscriptionLabel
-        let price = priceSubscriptionLabel
-        
-        switch period {
-        case .year:
-            title.text = R.string.localizable.subscriptionForAYearLabel()
-            price.text = R.string.localizable.subscriptionForAYearPriceLabel()
-        case .month:
-            title.text = R.string.localizable.subscriptionForAMonthLabel()
-            price.text = R.string.localizable.subscriptionForAMonthPriceLabel()
-        case .forever:
-            title.text = R.string.localizable.subscriptionForeverLabel()
-            price.attributedText = strikethroughText
-        }
-        
-        subscriptionView.addSubview(title)
-        subscriptionView.addSubview(price)
-        view.addSubview(subscriptionView)
-        
-        title.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.top.equalToSuperview().inset(25)
-        }
-        
-        price.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(35)
-            make.top.equalTo(title).inset(28)
-        }
-    }
-    
-    var strikethroughText: NSMutableAttributedString {
-        let text = R.string.localizable.subscriptionForeverPriceLabel()
-        let attributedText = NSMutableAttributedString(string: text)
-
-        let range = (text as NSString).range(of: "4980р")
-        attributedText.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
-        return attributedText
-    }
-    
-    func layoutViews() {
-        setupView(yearSubscriptionView, period: .year)
-        yearSubscriptionView.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(250)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(315)
-            make.height.equalTo(90)
-        }
-        
-        popularView.addSubview(popularLabel)
-        popularLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        view.addSubview(popularView)
-        popularView.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.top.equalTo(containerView).offset(235)
-            make.leading.equalToSuperview().inset(245)
-            make.trailing.equalToSuperview().inset(35)
-        }
-
-        setupView(monthSubscriptionView, period: .month)
-        monthSubscriptionView.snp.makeConstraints { make in
-            make.top.equalTo(yearSubscriptionView).offset(110)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(315)
-            make.height.equalTo(90)
-        }
-        
-        setupView(foreverSubscriptionView, period: .forever)
-        foreverSubscriptionView.snp.makeConstraints { make in
-            make.top.equalTo(monthSubscriptionView).offset(110)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(315)
-            make.height.equalTo(90)
-        }
-    }
-    
     // MARK: - Next Button and Description of Subscription
     
     var _nextButton: UIButton {
@@ -375,38 +398,11 @@ extension SubscriptionViewController {
     
     var _descriptionTextView: UITextView {
         let textView = UITextView()
-        textView.attributedText = textWithSpaceBetweenLines(text: R.string.localizable.describeSubscriptionForAYearTextView(), space: 5)
+        textView.attributedText = textView.textWithSpaceBetweenLines(text: R.string.localizable.describeSubscriptionForAYearTextView(), space: 5)
         textView.textColor = R.color.nobel()
         textView.font = Fonts.gilroyRegular14
         textView.isEditable = false
         textView.isScrollEnabled = false
         return textView
-    }
-    
-    func changeDescription(for period: Subscription) {
-        switch period {
-        case .year:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForAYearTextView()
-        case .month:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForAMonthTextView()
-        case .forever:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForeverTextView()
-        }
-    }
-    
-    func layoutButtonAndDescription() {
-        view.addSubview(nextButton)
-        nextButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(115)
-            make.leading.trailing.equalToSuperview().inset(40)
-            make.height.equalTo(69)
-        }
-        
-        view.addSubview(descriptionTextView)
-        descriptionTextView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(25)
-            make.leading.trailing.equalToSuperview().inset(33)
-            make.height.equalTo(80)
-        }
     }
 }
