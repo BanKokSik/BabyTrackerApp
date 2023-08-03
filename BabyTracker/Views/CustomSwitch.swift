@@ -31,6 +31,7 @@ class CustomSwitch: UIControl {
         super.init(frame: frame)
         setupSubviews()
         applyConstraints()
+        setupGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -68,13 +69,13 @@ class CustomSwitch: UIControl {
     }
     
     private func setupGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         addGestureRecognizer(tapGesture)
     }
     
     // MARK: - Actions
     
-    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+    @objc func handleTap() {
         isOn = !isOn
     }
     
@@ -89,7 +90,6 @@ class CustomSwitch: UIControl {
         trackView.backgroundColor = isOn ? R.color.trackOn() : R.color.trackOff()
         thumbView.backgroundColor = isOn ? R.color.thumbOn() : R.color.thumbOff()
     }
-    
 }
 
 private extension CustomSwitch {
@@ -105,5 +105,4 @@ private extension CustomSwitch {
         result.layer.cornerRadius = thumbSize.height / 2
         return result
     }
-    
 }

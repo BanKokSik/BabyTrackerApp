@@ -66,5 +66,4 @@ private extension PageCell {
         label.textAlignment = .center
         return label
     }
-    
 }

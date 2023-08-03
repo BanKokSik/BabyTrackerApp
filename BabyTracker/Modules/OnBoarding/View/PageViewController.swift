@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol PageViewControllerDelegate: AnyObject {
-    
-}
+protocol PageViewControllerDelegate: AnyObject {}
 
-protocol PageViewProtocol: AnyObject {
-    
-}
+protocol PageViewProtocol: AnyObject {}
 
-class PageViewController: UIViewController {
+class PageViewController: BaseViewController {
     
     var presenter: PagePresenterProtocol
     weak var delegate: PageViewControllerDelegate?
@@ -39,7 +35,6 @@ class PageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         setupSubviews()
         applyConstraints()
@@ -122,7 +117,6 @@ class PageViewController: UIViewController {
     @objc func nextButtonDidTap() {
         _ = swipeOrFinishOnbording()
     }
-    
 }
 
 extension PageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
