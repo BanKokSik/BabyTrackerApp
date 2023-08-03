@@ -169,14 +169,6 @@ class CreateProfileVC: BaseViewController {
             make.top.equalTo(nextButton.snp.bottom).offset(16)
             make.height.equalTo(63)
         }
-        
-//        switcher.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            //make.leading.trailing.equalToSuperview().inset(30)
-//            make.top.equalTo(userAgreement.snp.bottom).offset(16)
-//            make.height.equalTo(20)
-//            make.width.equalTo(50)
-//        }
     }
     
     func showPopup() {

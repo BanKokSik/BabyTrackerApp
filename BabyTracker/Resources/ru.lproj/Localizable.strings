@@ -18,6 +18,7 @@
 
 
 // MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
+"PageCellIdentifier" = "PageCell";
 "OnbordingLabelPage1" = "Планируйте развитие";
 "OnbordingLabelPage2" = "Сохраняйте моменты";
 "OnbordingLabelPage3" = "Следите за показателями";
@@ -65,3 +66,7 @@
 "SubscriptionForeverLabel" = "Навсегда";
 "SubscriptionForeverPriceLabel" = "4980р / 2490р";
 "DescribeSubscriptionForeverTextView" = "Условия подписки: можно приобрести платную версию приложения единоразово и навсегда за 2499 Р вместо 4980 Р";
+
+
+// MARK: - TabBar (Screen 8)
+"TabCellIdentifier" = "TabCell";

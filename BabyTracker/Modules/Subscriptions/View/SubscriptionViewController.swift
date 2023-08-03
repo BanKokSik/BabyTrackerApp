@@ -212,7 +212,9 @@ class SubscriptionViewController: BaseViewController {
         changeDescription(for: period)
     }
     
-    @objc private func buttonNextIsTapped() {}
+    @objc private func buttonNextIsTapped() {
+        subscriptionCoordinator?.didFinish()
+    }
     
     private func toggleViewActiveState(_ viewIsTapped: BorderView) {
         guard viewIsTapped.isActive != .active else { return }
@@ -237,7 +239,7 @@ class SubscriptionViewController: BaseViewController {
    }
 
     @objc private func closeButtonTapped() {
-       print("Закрыть")
+        subscriptionCoordinator?.didFinish()
     }
     
     private func changeDescription(for period: Subscription) {

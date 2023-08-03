@@ -20,8 +20,8 @@ final class AppCoordinator: NSObject, Coordinator {
     private var loaderCoordinator: LoaderCoordinator?
     private var registrationCoordinator: RegistrationCoordinator?
     private var createProfileCoordinator: CreateProfileCoordinator?
-    private var popupCoordinator: PopupCoordinator?
     private var subscriptionCoordinator: SubscriptionCoordinator?
+    private var tabBarCoordinator: CustomTabBarCoordinator?
     
     init(navController: CustomNavigationController = CustomNavigationController(),
          windowScene: UIWindowScene) {
@@ -41,9 +41,7 @@ final class AppCoordinator: NSObject, Coordinator {
             DispatchQueue.main.async {
                 self.installOnbordingCoordinator()
             }
-            
         }
-        
     }
     
     func entry() -> UIViewController {
@@ -91,8 +89,19 @@ final class AppCoordinator: NSObject, Coordinator {
     private func installSubscriptionCoordinator() {
         let subscriptionCoordinator = SubscriptionCoordinator(navController: navController, parent: self)
         subscriptionCoordinator.start()
+        subscriptionCoordinator.delegate = self
         subscriptionCoordinator.presentSubscriptionsPopup()
         self.subscriptionCoordinator = subscriptionCoordinator
+    }
+    
+    private func installTabBarCoordinator() {
+        let tabBarCoordinator = CustomTabBarCoordinator(navController: navController, parent: self)
+        tabBarCoordinator.start()
+        self.tabBarCoordinator = tabBarCoordinator
+        window.rootViewController = tabBarCoordinator.entry()
+        window.makeKeyAndVisible()
+        
+        childCoordinators.append(tabBarCoordinator)
     }
 }
 
@@ -111,6 +120,12 @@ extension AppCoordinator: RegistrationCoordinatorDelegate {
 extension AppCoordinator: CreateProfileCoordinatorDelegate {
     func createProfileModuleDidFinish() {
         installSubscriptionCoordinator()
+    }
+}
+
+extension AppCoordinator: SubscriptionCoordinatorDelegate {
+    func subscriptionModuleDidFinish() {
+        installTabBarCoordinator()
     }
 }
 

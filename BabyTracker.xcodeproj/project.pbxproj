@@ -36,6 +36,12 @@
 		906160A42A6DD31500715C64 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160A32A6DD31500715C64 /* CustomNavigationController.swift */; };
 		906160A72A6E83BF00715C64 /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160A62A6E83BF00715C64 /* SubscriptionModel.swift */; };
 		906160A92A6E83D000715C64 /* SubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160A82A6E83D000715C64 /* SubscriptionPresenter.swift */; };
+		90782C552A7C015900F52FA2 /* CustomTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C542A7C015900F52FA2 /* CustomTabBarCoordinator.swift */; };
+		90782C572A7C01AC00F52FA2 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C562A7C01AC00F52FA2 /* CustomTabBarController.swift */; };
+		90782C592A7C03DB00F52FA2 /* CustomTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C582A7C03DB00F52FA2 /* CustomTabCell.swift */; };
+		90782C5B2A7C044500F52FA2 /* TabViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C5A2A7C044500F52FA2 /* TabViewControllers.swift */; };
+		90782C5D2A7C12D800F52FA2 /* CustomTabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C5C2A7C12D800F52FA2 /* CustomTabBarModel.swift */; };
+		90782C5F2A7C12E900F52FA2 /* CustomTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90782C5E2A7C12E900F52FA2 /* CustomTabBarPresenter.swift */; };
 		908887102A4A09E400B8F04C /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088870F2A4A09E400B8F04C /* PageCell.swift */; };
 		90943D5E2A51DC1400763063 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90943D602A51DC1400763063 /* Localizable.strings */; };
 		90A74F652A7829D500DFCC85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A74F642A7829D500DFCC85 /* BaseViewController.swift */; };
@@ -87,6 +93,12 @@
 		906160A32A6DD31500715C64 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		906160A62A6E83BF00715C64 /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
 		906160A82A6E83D000715C64 /* SubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPresenter.swift; sourceTree = "<group>"; };
+		90782C542A7C015900F52FA2 /* CustomTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarCoordinator.swift; sourceTree = "<group>"; };
+		90782C562A7C01AC00F52FA2 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		90782C582A7C03DB00F52FA2 /* CustomTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabCell.swift; sourceTree = "<group>"; };
+		90782C5A2A7C044500F52FA2 /* TabViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewControllers.swift; sourceTree = "<group>"; };
+		90782C5C2A7C12D800F52FA2 /* CustomTabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarModel.swift; sourceTree = "<group>"; };
+		90782C5E2A7C12E900F52FA2 /* CustomTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarPresenter.swift; sourceTree = "<group>"; };
 		9088870F2A4A09E400B8F04C /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		90943D5F2A51DC1400763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90943D622A51DD1B00763063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -241,6 +253,7 @@
 				87E8F1E72A652A130067B7E6 /* CreateProfile */,
 				90464F7F2A5DE14500DA431D /* PopupGender */,
 				90464F8F2A64343600DA431D /* Subscriptions */,
+				90782C502A7C00E200F52FA2 /* CustomTabBar */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -386,6 +399,43 @@
 				808C0B482A45D51000AEC365 /* Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90782C502A7C00E200F52FA2 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				90782C512A7C011600F52FA2 /* Model */,
+				90782C522A7C012F00F52FA2 /* Presenter */,
+				90782C532A7C013A00F52FA2 /* View */,
+				90782C542A7C015900F52FA2 /* CustomTabBarCoordinator.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		90782C512A7C011600F52FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90782C5C2A7C12D800F52FA2 /* CustomTabBarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90782C522A7C012F00F52FA2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				90782C5E2A7C12E900F52FA2 /* CustomTabBarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		90782C532A7C013A00F52FA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90782C562A7C01AC00F52FA2 /* CustomTabBarController.swift */,
+				90782C582A7C03DB00F52FA2 /* CustomTabCell.swift */,
+				90782C5A2A7C044500F52FA2 /* TabViewControllers.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		90A74F632A7829C200DFCC85 /* Base */ = {
@@ -619,10 +669,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90782C5B2A7C044500F52FA2 /* TabViewControllers.swift in Sources */,
 				90464F8B2A5FDE0600DA431D /* AuthNetwork.swift in Sources */,
 				906160A42A6DD31500715C64 /* CustomNavigationController.swift in Sources */,
 				906160A72A6E83BF00715C64 /* SubscriptionModel.swift in Sources */,
 				90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */,
+				90782C5F2A7C12E900F52FA2 /* CustomTabBarPresenter.swift in Sources */,
 				90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */,
 				90CDD7A52A5DE03500945581 /* ColorButtons.swift in Sources */,
 				906160A22A6DD2C500715C64 /* BorderView.swift in Sources */,
@@ -643,14 +695,18 @@
 				9061609A2A6A672A00715C64 /* CustomTextField.swift in Sources */,
 				87E8F1EF2A652A130067B7E6 /* RegisterViewController.swift in Sources */,
 				90A74F652A7829D500DFCC85 /* BaseViewController.swift in Sources */,
+				90782C5D2A7C12D800F52FA2 /* CustomTabBarModel.swift in Sources */,
 				4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */,
 				87E8F1EE2A652A130067B7E6 /* RegistrationPresenter.swift in Sources */,
 				4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */,
 				80BB3AB92A68198300E05642 /* LoaderViewController.swift in Sources */,
 				87E8F1F12A652A130067B7E6 /* Model.swift in Sources */,
 				90FF22DB2A685BFF004A166C /* RegistrationCoordinator.swift in Sources */,
+				90782C592A7C03DB00F52FA2 /* CustomTabCell.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,
 				9061609E2A6AB7A700715C64 /* PopupCoordinator.swift in Sources */,
+				90782C552A7C015900F52FA2 /* CustomTabBarCoordinator.swift in Sources */,
+				90782C572A7C01AC00F52FA2 /* CustomTabBarController.swift in Sources */,
 				906160A02A6D8D9700715C64 /* CustomSwitch.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
