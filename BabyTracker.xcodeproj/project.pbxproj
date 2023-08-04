@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3F794D228B0EC88F581AE026 /* Pods_BabyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD69B02F405799B813B15564 /* Pods_BabyTracker.framework */; };
+		4B504A292A7BD24F00011300 /* ApiComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A282A7BD24F00011300 /* ApiComponents.swift */; };
+		4B504A2B2A7BD27B00011300 /* MultipartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A2A2A7BD27B00011300 /* MultipartItem.swift */; };
+		4B504A2D2A7BD2F000011300 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A2C2A7BD2F000011300 /* ApiRouter.swift */; };
+		4B504A302A7BD43600011300 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A2F2A7BD43600011300 /* Config.swift */; };
+		4B504A322A7BD5E500011300 /* ApiSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A312A7BD5E500011300 /* ApiSessionProvider.swift */; };
+		4B504A342A7BDE8600011300 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A332A7BDE8600011300 /* ApiProvider.swift */; };
+		4B504A362A7BE09700011300 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A352A7BE09700011300 /* AuthProvider.swift */; };
+		4B504A382A7BE8A300011300 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A372A7BE8A300011300 /* RegisterRouter.swift */; };
+		4B504A3B2A7BF48C00011300 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A3A2A7BF48C00011300 /* ApiError.swift */; };
+		4B504A3E2A7BF71A00011300 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A3D2A7BF71A00011300 /* UserModel.swift */; };
+		4B504A412A7D077800011300 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A402A7D077800011300 /* UserRouter.swift */; };
+		4B504A432A7D078400011300 /* UserApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A422A7D078400011300 /* UserApiProvider.swift */; };
+		4B504A452A7D2CEC00011300 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A442A7D2CEC00011300 /* Date+Extension.swift */; };
+		4B504A472A7D2F3500011300 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B504A462A7D2F3500011300 /* Encodable+Extension.swift */; };
 		4B7D69C82A65598E00EF3F75 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69C72A65598E00EF3F75 /* Coordinator.swift */; };
 		4B7D69CB2A6559B800EF3F75 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CA2A6559B800EF3F75 /* AppCoordinator.swift */; };
 		4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */; };
@@ -26,7 +40,7 @@
 		901BED6C2A64375000954E2E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901BED6B2A64375000954E2E /* SubscriptionViewController.swift */; };
 		90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F832A5DE2D900DA431D /* PopupViewController.swift */; };
 		90464F882A5EEB9A00DA431D /* PopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F872A5EEB9A00DA431D /* PopupPresenter.swift */; };
-		90464F8B2A5FDE0600DA431D /* AuthNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */; };
+		90464F8B2A5FDE0600DA431D /* RegisterApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8A2A5FDE0600DA431D /* RegisterApiProvider.swift */; };
 		90464F8E2A63293300DA431D /* PopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90464F8D2A63293300DA431D /* PopupModel.swift */; };
 		906160972A69243000715C64 /* SubscriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160962A69243000715C64 /* SubscriptionCoordinator.swift */; };
 		9061609A2A6A672A00715C64 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906160992A6A672A00715C64 /* CustomTextField.swift */; };
@@ -57,6 +71,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B504A282A7BD24F00011300 /* ApiComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiComponents.swift; sourceTree = "<group>"; };
+		4B504A2A2A7BD27B00011300 /* MultipartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartItem.swift; sourceTree = "<group>"; };
+		4B504A2C2A7BD2F000011300 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		4B504A2F2A7BD43600011300 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4B504A312A7BD5E500011300 /* ApiSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionProvider.swift; sourceTree = "<group>"; };
+		4B504A332A7BDE8600011300 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		4B504A352A7BE09700011300 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		4B504A372A7BE8A300011300 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		4B504A3A2A7BF48C00011300 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		4B504A3D2A7BF71A00011300 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4B504A402A7D077800011300 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		4B504A422A7D078400011300 /* UserApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiProvider.swift; sourceTree = "<group>"; };
+		4B504A442A7D2CEC00011300 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4B504A462A7D2F3500011300 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		4B7D69C72A65598E00EF3F75 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4B7D69CA2A6559B800EF3F75 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4B7D69CC2A655A0400EF3F75 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -76,7 +104,7 @@
 		903FA61F2A51E6690066CC4F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90464F832A5DE2D900DA431D /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		90464F872A5EEB9A00DA431D /* PopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresenter.swift; sourceTree = "<group>"; };
-		90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetwork.swift; sourceTree = "<group>"; };
+		90464F8A2A5FDE0600DA431D /* RegisterApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiProvider.swift; sourceTree = "<group>"; };
 		90464F8D2A63293300DA431D /* PopupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModel.swift; sourceTree = "<group>"; };
 		906160962A69243000715C64 /* SubscriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCoordinator.swift; sourceTree = "<group>"; };
 		906160982A69274000715C64 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -132,6 +160,56 @@
 				AD932817A05EFCBCCD2674C6 /* Pods-BabyTracker.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B504A272A7BD23900011300 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4B504A2C2A7BD2F000011300 /* ApiRouter.swift */,
+				4B504A332A7BDE8600011300 /* ApiProvider.swift */,
+				4B504A312A7BD5E500011300 /* ApiSessionProvider.swift */,
+				4B504A352A7BE09700011300 /* AuthProvider.swift */,
+				4B504A3A2A7BF48C00011300 /* ApiError.swift */,
+				4B504A282A7BD24F00011300 /* ApiComponents.swift */,
+				4B504A2A2A7BD27B00011300 /* MultipartItem.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4B504A2E2A7BD42C00011300 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4B504A2F2A7BD43600011300 /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		4B504A392A7BE9B500011300 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4B504A3F2A7D075E00011300 /* User */,
+				90464F892A5FDDE500DA431D /* Register */,
+				4B504A2E2A7BD42C00011300 /* Config */,
+				4B504A272A7BD23900011300 /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4B504A3C2A7BF70800011300 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B504A3D2A7BF71A00011300 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B504A3F2A7D075E00011300 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4B504A422A7D078400011300 /* UserApiProvider.swift */,
+				4B504A402A7D077800011300 /* UserRouter.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		4B7D69C62A65595500EF3F75 /* Views */ = {
@@ -283,12 +361,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		90464F892A5FDDE500DA431D /* NetworkManager */ = {
+		90464F892A5FDDE500DA431D /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				90464F8A2A5FDE0600DA431D /* AuthNetwork.swift */,
+				90464F8A2A5FDE0600DA431D /* RegisterApiProvider.swift */,
+				4B504A372A7BE8A300011300 /* RegisterRouter.swift */,
 			);
-			path = NetworkManager;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		90464F8C2A63291200DA431D /* Model */ = {
@@ -384,6 +463,8 @@
 			isa = PBXGroup;
 			children = (
 				808C0B482A45D51000AEC365 /* Extension.swift */,
+				4B504A442A7D2CEC00011300 /* Date+Extension.swift */,
+				4B504A462A7D2F3500011300 /* Encodable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,9 +508,10 @@
 		90E2CBB72A45B4CF00B116BE /* BabyTracker */ = {
 			isa = PBXGroup;
 			children = (
-				90A74F632A7829C200DFCC85 /* Base */,
-				90464F892A5FDDE500DA431D /* NetworkManager */,
 				9067B00F2A4EF394005723EE /* App */,
+				4B504A3C2A7BF70800011300 /* Models */,
+				4B504A392A7BE9B500011300 /* Network */,
+				90A74F632A7829C200DFCC85 /* Base */,
 				4B7D69C62A65595500EF3F75 /* Views */,
 				87E8F1DC2A6521FA0067B7E6 /* Storage */,
 				903FA6202A542EC50066CC4F /* Modules */,
@@ -619,28 +701,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90464F8B2A5FDE0600DA431D /* AuthNetwork.swift in Sources */,
+				90464F8B2A5FDE0600DA431D /* RegisterApiProvider.swift in Sources */,
 				906160A42A6DD31500715C64 /* CustomNavigationController.swift in Sources */,
 				906160A72A6E83BF00715C64 /* SubscriptionModel.swift in Sources */,
 				90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */,
+				4B504A412A7D077800011300 /* UserRouter.swift in Sources */,
 				90EE92452A49BB7A003D4471 /* Fonts.swift in Sources */,
 				90CDD7A52A5DE03500945581 /* ColorButtons.swift in Sources */,
 				906160A22A6DD2C500715C64 /* BorderView.swift in Sources */,
 				901BED6C2A64375000954E2E /* SubscriptionViewController.swift in Sources */,
+				4B504A322A7BD5E500011300 /* ApiSessionProvider.swift in Sources */,
 				90464F882A5EEB9A00DA431D /* PopupPresenter.swift in Sources */,
+				4B504A3E2A7BF71A00011300 /* UserModel.swift in Sources */,
 				906160972A69243000715C64 /* SubscriptionCoordinator.swift in Sources */,
 				908887102A4A09E400B8F04C /* PageCell.swift in Sources */,
+				4B504A432A7D078400011300 /* UserApiProvider.swift in Sources */,
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
+				4B504A292A7BD24F00011300 /* ApiComponents.swift in Sources */,
+				4B504A472A7D2F3500011300 /* Encodable+Extension.swift in Sources */,
 				87E8F1DE2A6521FA0067B7E6 /* UserDefaultsSettings.swift in Sources */,
 				87E8F1F02A652A130067B7E6 /* CreateProfilePresenter.swift in Sources */,
 				80BB3ABF2A697AA800E05642 /* LoaderCoordinator.swift in Sources */,
 				90464F842A5DE2D900DA431D /* PopupViewController.swift in Sources */,
+				4B504A302A7BD43600011300 /* Config.swift in Sources */,
 				90464F8E2A63293300DA431D /* PopupModel.swift in Sources */,
 				90E2CBB92A45B4CF00B116BE /* AppDelegate.swift in Sources */,
 				4B7D69C82A65598E00EF3F75 /* Coordinator.swift in Sources */,
 				906160A92A6E83D000715C64 /* SubscriptionPresenter.swift in Sources */,
+				4B504A452A7D2CEC00011300 /* Date+Extension.swift in Sources */,
 				87E8F1F22A652A130067B7E6 /* CreateProfileVC.swift in Sources */,
 				9061609A2A6A672A00715C64 /* CustomTextField.swift in Sources */,
+				4B504A342A7BDE8600011300 /* ApiProvider.swift in Sources */,
+				4B504A2B2A7BD27B00011300 /* MultipartItem.swift in Sources */,
 				87E8F1EF2A652A130067B7E6 /* RegisterViewController.swift in Sources */,
 				90A74F652A7829D500DFCC85 /* BaseViewController.swift in Sources */,
 				4B7D69CD2A655A0400EF3F75 /* OnboardingCoordinator.swift in Sources */,
@@ -651,10 +743,14 @@
 				90FF22DB2A685BFF004A166C /* RegistrationCoordinator.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,
 				9061609E2A6AB7A700715C64 /* PopupCoordinator.swift in Sources */,
+				4B504A3B2A7BF48C00011300 /* ApiError.swift in Sources */,
+				4B504A2D2A7BD2F000011300 /* ApiRouter.swift in Sources */,
 				906160A02A6D8D9700715C64 /* CustomSwitch.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
 				90EE92472A49BC51003D4471 /* R.generated.swift in Sources */,
+				4B504A362A7BE09700011300 /* AuthProvider.swift in Sources */,
+				4B504A382A7BE8A300011300 /* RegisterRouter.swift in Sources */,
 				4B7D69CF2A65690800EF3F75 /* CreateProfileCoordinator.swift in Sources */,
 				9007E62C2A519BE300A9E144 /* PageViewController.swift in Sources */,
 			);

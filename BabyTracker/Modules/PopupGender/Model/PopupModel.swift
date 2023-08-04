@@ -10,6 +10,15 @@ import UIKit
 enum Gender {
     case boy
     case girl
+    
+    var value: String {
+        switch self {
+        case .boy:
+            return "male"
+        case .girl:
+            return "female"
+        }
+    }
 }
 
 struct GenderModel {

@@ -10,11 +10,14 @@ import UIKit
 
 protocol PageViewControllerDelegate: AnyObject {}
 
-protocol PageViewProtocol: AnyObject {}
+protocol PageViewProtocol: AnyObject {
+    var presenter: PagePresenterProtocol? { get set }
+    var coordinator: Coordinator? { get set }
+}
 
-class PageViewController: BaseViewController {
+class PageViewController: BaseViewController, PageViewProtocol {
     
-    var presenter: PagePresenterProtocol
+    var presenter: PagePresenterProtocol?
     weak var delegate: PageViewControllerDelegate?
     
     weak var coordinator: Coordinator?
@@ -25,7 +28,6 @@ class PageViewController: BaseViewController {
     private lazy var collectionView: UICollectionView = _collectionView
     
     init() {
-        presenter = PagePresenter()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,6 +41,7 @@ class PageViewController: BaseViewController {
         setupSubviews()
         applyConstraints()
         configureSwipes()
+        presenter?.didLoad()
     }
     
     private func setupSubviews() {
@@ -67,6 +70,9 @@ class PageViewController: BaseViewController {
     }
     
     private func scrollToItem(index: Int, _ collectionView: UICollectionView) {
+        guard let presenter = presenter else {
+            return
+        }
         guard index < presenter.pages.count else { return }
         
         let indexPath = IndexPath(item: index, section: 0)
@@ -84,6 +90,9 @@ class PageViewController: BaseViewController {
     }
     
     private func swipeOrFinishOnbording() -> Int {
+        guard let presenter = presenter else {
+            return 0
+        }
         let nextIndex = presenter.nextPageIndex(pageControl.currentPage)
         
         if nextIndex != presenter.pages.count {
@@ -106,6 +115,9 @@ class PageViewController: BaseViewController {
     }
     
     @objc func handleSwipeRight() {
+        guard let presenter = presenter else {
+            return
+        }
         let previousIndex = presenter.previousPageIndex(pageControl.currentPage)
         setPage(index: previousIndex)
     }
@@ -122,10 +134,16 @@ class PageViewController: BaseViewController {
 extension PageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let presenter = presenter else {
+            return 0
+        }
         return presenter.pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let presenter = presenter else {
+            return UICollectionViewCell()
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCell.reuseIdentifier, for: indexPath) as! PageCell
         let pageItem = presenter.pages[indexPath.item]
         cell.update(image: pageItem.image!, text: pageItem.textLabel)
@@ -145,7 +163,7 @@ private extension PageViewController {
     var _pageControl: UIPageControl {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
-        pageControl.numberOfPages = presenter.pages.count
+        pageControl.numberOfPages = presenter?.pages.count ?? 0
         pageControl.pageIndicatorTintColor = R.color.heliotropeLight()
         pageControl.currentPageIndicatorTintColor = R.color.heliotrope()
         pageControl.addTarget(self, action: #selector(pageControlDidTap), for: .valueChanged)

@@ -19,6 +19,8 @@ class PagePresenter: PagePresenterProtocol {
     
     weak var view: PageViewProtocol?
     
+    var registerProvider: RegisterApiProvider
+    
     var pages = PageItems.pages
     
     lazy var nextPageIndex = { (currentPage: Int) -> Int in
@@ -29,11 +31,15 @@ class PagePresenter: PagePresenterProtocol {
         return max(currentPage - 1, 0)
     }
     
-    init(view: PageViewProtocol? = nil) {
+    init(view: PageViewProtocol? = nil, registerProvider: RegisterApiProvider) {
         self.view = view
+        self.registerProvider = registerProvider
     }
     
     func didLoad() {
-        
+        guard let deviceId = UserDefaultsSettings.setupDeviceId else {
+            return
+        }
+        registerProvider.registerToken(device: deviceId)
     }
 }
