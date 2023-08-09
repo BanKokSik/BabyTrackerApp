@@ -52,6 +52,8 @@ final class AppCoordinator: NSObject, Coordinator {
         onboardingCoordinator = nil
         registrationCoordinator = nil
         createProfileCoordinator = nil
+        subscriptionCoordinator = nil
+        tabBarCoordinator = nil
     }
     
     private func installOnbordingCoordinator(){

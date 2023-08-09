@@ -17,6 +17,7 @@ class BorderView: UIView {
     var isActive: ElementActivity = .inactive
     
     var color = R.color.wildSand()
+    var dashedColor = R.color.heliotrope()
     var lineWidth: CGFloat = 3
     var dashPattern: [CGFloat] = [2, 4]
     
@@ -35,7 +36,7 @@ class BorderView: UIView {
         
         switch isActive {
         case .active:
-            R.color.heliotrope()?.setStroke()
+            dashedColor?.setStroke()
             path.setLineDash(dashPattern, count: 2, phase: 0)
         case .inactive:
             color?.setStroke()

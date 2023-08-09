@@ -70,3 +70,9 @@ Design albums
 
 // MARK: - TabBar (Screen 8)
 "TabCellIdentifier" = "TabCell";
+
+
+// MARK: - Calendar (Screen 10)
+"CalendarCellIdentifier" = "CalendarCell";
+"AddButton" = "Add";
+"TableCellIdentifier" = "TableCell";

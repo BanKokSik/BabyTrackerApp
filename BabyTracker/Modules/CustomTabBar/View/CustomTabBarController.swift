@@ -19,7 +19,7 @@ class CustomTabBarController: UITabBarController {
     
     private let cellImages = CustomTabCellModel.images
     private let controllers: [UIViewController] = [FirstViewController(),
-                                                   SecondViewController(),
+                                                   CalendarViewController(),
                                                    ThirdViewController(),
                                                    FourthViewController(),
                                                    FifthViewController(),
