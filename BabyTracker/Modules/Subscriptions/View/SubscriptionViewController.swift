@@ -18,6 +18,7 @@ protocol SubscriptionViewControllerDelegate: AnyObject {}
 class SubscriptionViewController: BaseViewController {
     
     weak var delegate: SubscriptionViewControllerDelegate?
+    var presenter: SubscriptionPresenter?
     
     weak var coordinator: Coordinator?
     private var subscriptionCoordinator: SubscriptionCoordinator? { coordinator as? SubscriptionCoordinator }
@@ -35,6 +36,9 @@ class SubscriptionViewController: BaseViewController {
     private lazy var popularView: UIView = _popularView
     private lazy var popularLabel: UILabel = _popularLabel
     
+    private lazy var nextButton: UIButton = _nextButton
+    private lazy var descriptionTextView: UITextView = _descriptionTextView
+    
     private lazy var subscriptionsViews: [BorderView] = [
         yearSubscriptionView,
         monthSubscriptionView,
@@ -46,11 +50,17 @@ class SubscriptionViewController: BaseViewController {
         #selector(monthSubscriptionIsTapped),
         #selector(foreverSubscriptionIsTapped)
     ]
-    
-    private lazy var nextButton: UIButton = _nextButton
-    private lazy var descriptionTextView: UITextView = _descriptionTextView
 
     private var period: Subscription = .year
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        presenter = SubscriptionPresenter(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,21 +161,21 @@ class SubscriptionViewController: BaseViewController {
         }
     }
     
+    func setTextOnSubscriptionLabels(title: UILabel, price: UILabel, period: Subscription) {
+        let dataLabels = presenter?.getTextForSubscriptionLabels(period: period)
+        title.text = dataLabels?.title
+        if period == .forever {
+            price.attributedText = dataLabels?.price
+        } else {
+            price.text = dataLabels?.price.string
+        }
+    }
+    
     private func setupSubscription(_ subscriptionView: BorderView, period: Subscription) {
         let title = titleSubscriptionLabel
         let price = priceSubscriptionLabel
         
-        switch period {
-        case .year:
-            title.text = R.string.localizable.subscriptionForAYearLabel()
-            price.text = R.string.localizable.subscriptionForAYearPriceLabel()
-        case .month:
-            title.text = R.string.localizable.subscriptionForAMonthLabel()
-            price.text = R.string.localizable.subscriptionForAMonthPriceLabel()
-        case .forever:
-            title.text = R.string.localizable.subscriptionForeverLabel()
-            price.attributedText = strikethroughText
-        }
+        setTextOnSubscriptionLabels(title: title, price: price, period: period)
         
         subscriptionView.addSubview(title)
         subscriptionView.addSubview(price)
@@ -194,22 +204,22 @@ class SubscriptionViewController: BaseViewController {
         view.isUserInteractionEnabled = true
     }
     
-    @objc private func yearSubscriptionIsTapped() {
-        toggleViewActiveState(yearSubscriptionView)
-        period = .year
+    func subscriptionIsTapped(on viewIsTapped: BorderView, period: Subscription) {
+        toggleViewActiveState(viewIsTapped)
+        self.period = period
         changeDescription(for: period)
+    }
+    
+    @objc private func yearSubscriptionIsTapped() {
+        subscriptionIsTapped(on: yearSubscriptionView, period: .year)
     }
     
     @objc private func monthSubscriptionIsTapped() {
-        toggleViewActiveState(monthSubscriptionView)
-        period = .month
-        changeDescription(for: period)
+        subscriptionIsTapped(on: monthSubscriptionView, period: .month)
     }
     
     @objc private func foreverSubscriptionIsTapped() {
-        toggleViewActiveState(foreverSubscriptionView)
-        period = .forever
-        changeDescription(for: period)
+        subscriptionIsTapped(on: foreverSubscriptionView, period: .forever)
     }
     
     @objc private func buttonNextIsTapped() {
@@ -243,17 +253,10 @@ class SubscriptionViewController: BaseViewController {
     }
     
     private func changeDescription(for period: Subscription) {
-        switch period {
-        case .year:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForAYearTextView()
-        case .month:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForAMonthTextView()
-        case .forever:
-            descriptionTextView.text = R.string.localizable.describeSubscriptionForeverTextView()
-        }
+        descriptionTextView.text = presenter?.getTextForDescription(period)
     }
     
-    private var strikethroughText: NSMutableAttributedString {
+    var strikethroughText: NSMutableAttributedString {
         let text = R.string.localizable.subscriptionForeverPriceLabel()
         let attributedText = NSMutableAttributedString(string: text)
 

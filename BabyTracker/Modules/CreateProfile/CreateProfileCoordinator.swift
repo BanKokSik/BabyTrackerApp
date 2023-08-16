@@ -40,6 +40,9 @@ final class CreateProfileCoordinator: Coordinator {
         return viewController
     }
     
+    func didFinish() {
+        delegate?.createProfileModuleDidFinish()
+    }
 }
 
 extension CreateProfileCoordinator: PopupCoordinatorDelegate {
@@ -61,9 +64,5 @@ extension CreateProfileCoordinator: PopupCoordinatorDelegate {
     func closePopup() {
         guard let popup = popupCoordinator?.entry() as? PopupViewController else { return }
         popup.closePopup()
-    }
-    
-    func didFinish() {
-        delegate?.createProfileModuleDidFinish()
     }
 }

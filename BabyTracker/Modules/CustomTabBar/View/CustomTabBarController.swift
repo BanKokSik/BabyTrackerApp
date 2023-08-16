@@ -12,18 +12,23 @@ class CustomTabBarController: UITabBarController {
     weak var coordinator: Coordinator?
     private var tabBarCoordinator: CustomTabBarCoordinator? { coordinator as? CustomTabBarCoordinator }
     
+    var presenter: CustomTabBarPresenter?
+    
     private lazy var flowLayout: UICollectionViewFlowLayout = _flowLayout
     private lazy var collectionView: UICollectionView = _collectionView
     
     private var selectedCellIndex = 0
     
     private let cellImages = CustomTabCellModel.images
-    private let controllers: [UIViewController] = [FirstViewController(),
-                                                   CalendarViewController(),
-                                                   ThirdViewController(),
-                                                   FourthViewController(),
-                                                   FifthViewController(),
-                                                   SixthViewController()]
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        presenter = CustomTabBarPresenter(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +66,11 @@ class CustomTabBarController: UITabBarController {
     }
     
     private func setupViewController(at indexPath: IndexPath) {
-        let viewController = controllers[indexPath.item]
-        addChild(viewController)
-        viewController.didMove(toParent: self)
+        if let viewController = tabBarCoordinator?.viewControllers[indexPath.item] {
+            addChild(viewController)
+            viewController.didMove(toParent: self)
+        }
     }
-    
 }
 
 extension CustomTabBarController: UICollectionViewDataSource {
@@ -77,11 +82,13 @@ extension CustomTabBarController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTabCell.cellIdentifier, for: indexPath) as! CustomTabCell
 
-        cell.setImage(cellImages[indexPath.item].image)
-        cell.updateCell(isSelected: indexPath.row == selectedCellIndex)
+        let cellImage = cellImages[indexPath.item].image
+        cell.setImage(cellImage)
+        
+        let alpha = presenter!.getActualCellAlpha(indexPath.row == selectedCellIndex)
+        cell.updateCell(with: alpha)
         
         setupViewController(at: indexPath)
-        
         return cell
     }
 }
@@ -91,7 +98,8 @@ extension CustomTabBarController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCellIndex = indexPath.row
         selectedIndex = selectedCellIndex
-        selectedViewController = controllers[indexPath.row]
+        selectedViewController = tabBarCoordinator?.viewControllers[indexPath.row]
+        
         collectionView.reloadData()
     }
 }
@@ -99,7 +107,7 @@ extension CustomTabBarController: UICollectionViewDelegate {
 extension CustomTabBarController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 71, height: 71)
+        return presenter!.setSizeOfCell
     }
 }
 

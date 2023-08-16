@@ -30,18 +30,20 @@ final class AppCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let loaderCoordinator = LoaderCoordinator(navController: navController, parent: self)
-        loaderCoordinator.start()
-        self.loaderCoordinator = loaderCoordinator
-        window.rootViewController = loaderCoordinator.entry()
-        window.makeKeyAndVisible()
-        childCoordinators.append(loaderCoordinator)
-        let queue = DispatchQueue.global(qos: .utility)
-        queue.asyncAfter(deadline: .now() + 3.0) {
-            DispatchQueue.main.async {
-                self.installOnbordingCoordinator()
-            }
-        }
+//        let loaderCoordinator = LoaderCoordinator(navController: navController, parent: self)
+//        loaderCoordinator.start()
+//        self.loaderCoordinator = loaderCoordinator
+//        window.rootViewController = loaderCoordinator.entry()
+//        window.makeKeyAndVisible()
+//        childCoordinators.append(loaderCoordinator)
+//        let queue = DispatchQueue.global(qos: .utility)
+//        queue.asyncAfter(deadline: .now() + 3.0) {
+//            DispatchQueue.main.async {
+//                self.installOnbordingCoordinator()
+//            }
+//        }
+        
+        installTabBarCoordinator()
     }
     
     func entry() -> UIViewController {

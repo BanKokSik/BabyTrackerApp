@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class CalendarTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = R.string.localizable.tableCellIdentifier()
     
@@ -110,7 +110,7 @@ class TableViewCell: UITableViewCell {
     }
 }
 
-extension TableViewCell {
+extension CalendarTableViewCell {
     
     var _iconImageView: UIImageView {
         let imageView = UIImageView()

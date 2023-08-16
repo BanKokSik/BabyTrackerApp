@@ -36,8 +36,8 @@ class CustomTabCell: UICollectionViewCell {
         }
     }
     
-    func updateCell(isSelected: Bool) {
-        imageView.alpha = isSelected ? 1.0 : 0.5
+    func updateCell(with alphaValue: Double) {
+        imageView.alpha = alphaValue
     }
     
     func setImage(_ image: UIImage?) {

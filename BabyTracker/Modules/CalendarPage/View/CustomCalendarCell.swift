@@ -12,9 +12,7 @@ class CustomCalendarCell: FSCalendarCell {
     
     static let reuseIdentifier = R.string.localizable.calendarCellIdentifier()
     
-    private var eventLayers: [CALayer:Int] = [:]
     private lazy var eventStackView: UIStackView = _eventStackView
-    private var containerView: UIView!
     private var isTodayConstraints: [Bool : Int] = [true : 5, false: 12]
      
     private func setupEventStackView(isToday: Bool) {

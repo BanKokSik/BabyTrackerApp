@@ -72,6 +72,10 @@
 "TabCellIdentifier" = "TabCell";
 
 
+// MARK: - EventFeed (Screen 9)
+"FeedCellIdentifier" = "FeedCell";
+
+
 // MARK: - Calendar (Screen 10)
 "CalendarCellIdentifier" = "CalendarCell";
 "AddButton" = "Добавить";

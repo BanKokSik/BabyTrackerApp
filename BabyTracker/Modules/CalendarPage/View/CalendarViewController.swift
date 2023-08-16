@@ -10,9 +10,12 @@ import FSCalendar
 
 class CalendarViewController: BaseViewController {
     
+    weak var coordinator: Coordinator?
+    private var calendarCoordinator: CalendarCoordinator? { coordinator as? CalendarCoordinator }
+    
+    var presenter: CalendarPresenter?
     private lazy var calendar: FSCalendar! = _calendar
     
-    private lazy var dateFormatter: DateFormatter = _dateFormatter
     private lazy var calendarIcon: UIImageView = _calendarIcon
     private lazy var monthLabel: UILabel = _monthLabel
     private lazy var yearLabel: UILabel = _yearLabel
@@ -25,9 +28,9 @@ class CalendarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMonth()
-        setupYear()
+        presenter = CalendarPresenter()
         
+        setupMonthAndYear()
         setupSubviews()
         applyConstraints()
     }
@@ -79,16 +82,12 @@ class CalendarViewController: BaseViewController {
         }
     }
     
-    func setupYear() {
-        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
-        yearLabel.text = "\(values.year!)"
-    }
-    
-    func setupMonth() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "LLLL"
-        let monthName = dateFormatter.string(from: calendar.currentPage).capitalized
+    func setupMonthAndYear() {
+        let monthName = presenter?.getMonthValue(from: calendar)
         monthLabel.text = monthName
+        
+        let yearValue = presenter!.getYearValue(from: calendar)
+        yearLabel.text = "\(yearValue)"
     }
 }
 
@@ -100,8 +99,7 @@ extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        setupMonth()
-        setupYear()
+        setupMonthAndYear()
     }
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
@@ -109,12 +107,9 @@ extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
         
         cell.clearEventDots()
         
-        let dateString = dateFormatter.string(from: date)
-        let currentDate = Date()
-        let isToday = Calendar.current.isDate(date, inSameDayAs: currentDate)
-        
-        if let events = events[dateString] {
-            cell.addEventDots(isToday: isToday, events: events, areAlreadyExist: true)
+        let dateData = presenter!.getDateData(cellFor: date)
+        if let events = events[dateData.date] {
+            cell.addEventDots(isToday: dateData.isToday, events: events, areAlreadyExist: true)
         }
         return cell
     }
@@ -123,11 +118,11 @@ extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseIdentifier, for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.reuseIdentifier, for: indexPath) as! CalendarTableViewCell
 
         let event = Event.events[indexPath.row]
         cell.setIcons(event.icon)
@@ -135,72 +130,24 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func resetEventDict() {
-        Event.eventDict = [
-            Event.infoEvent : 0,
-            Event.doctorEvent : 0,
-            Event.vaccinationEvent : 0
-        ]
+        return presenter!.getHeightForRow
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let date = dateFormatter.string(from: selectedDate)
-        var eventsArray = EventModel.events[date] != nil ? EventModel.events[date]! : []; resetEventDict()
+        var eventsArray = presenter!.initEventsArray(date: selectedDate, indexPath: indexPath)
         
-        let newEvent = createEventForIndexPath(indexPath)
+        let newEvent = presenter!.createEventForIndexPath(indexPath)
         eventsArray.append(newEvent)
         
-        updateEventModelData(date: date, events: eventsArray)
-        
-        updateTableViewCell(at: indexPath, with: newEvent)
-        updateCalendarCell(for: selectedDate, with: eventsArray)
-    }
-    
-    func createEventForIndexPath(_ indexPath: IndexPath) -> EventModel {
-        switch indexPath.row {
-        case 0:
-            return EventModel(event: Event.infoEvent, title: "Позвонить дедушке")
-        case 1:
-            return EventModel(event: Event.doctorEvent, title: "Пройти медосмотр", subtitle: "Окулист")
-        case 2:
-            return EventModel(event: Event.vaccinationEvent, title: "Пойти к доктору на укол", subtitle: "Тектраксин")
-        default:
-            fatalError("Unknown indexPath")
-        }
-    }
-    
-    func updateEventModelData(date: String, events: [EventModel]) {
-        EventModel.events[date] = events
-        EventModel.countEvents(selectedDate: date)
-    }
-    
-    func updateTableViewCell(at indexPath: IndexPath, with event: EventModel) {
-        if let tableCell = tableView.cellForRow(at: indexPath) as? TableViewCell {
-            tableCell.currentCell = indexPath.row
-            tableCell.addEvent(title: event.title ?? "", subtitle: event.subtitle ?? "")
-            tableCell.toggleExpansion()
-        }
-    }
-
-    func updateCalendarCell(for date: Date, with events: [EventModel]) {
-        if let calendarCell = calendar.cell(for: date, at: .current) as? CustomCalendarCell {
-            calendarCell.addEventDots(isToday: false, events: events, areAlreadyExist: false)
-        }
+        presenter?.updateEventModelData(date: selectedDate, events: eventsArray)
+        presenter?.updateTableViewCell(tableView, at: indexPath, with: newEvent)
+        presenter?.updateCalendarCell(calendar, for: selectedDate, with: eventsArray)
     }
 }
 
 private extension CalendarViewController {
-    
-    var _dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }
     
     var _calendarIcon: UIImageView {
         let imageView = UIImageView()
@@ -256,7 +203,7 @@ private extension CalendarViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reuseIdentifier)
+        tableView.register(CalendarTableViewCell.self, forCellReuseIdentifier: CalendarTableViewCell.reuseIdentifier)
         return tableView
     }
 }
