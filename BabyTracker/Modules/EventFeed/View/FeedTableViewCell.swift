@@ -49,7 +49,7 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    func setEventsViews() {
+    func setupEventsViews() {
         setupEventsSubviews()
         applyEventsConstraints()
     }
