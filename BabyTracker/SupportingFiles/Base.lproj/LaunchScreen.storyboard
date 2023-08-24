@@ -17,15 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="BabyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-RN-sLo">
-                                <rect key="frame" x="0.0" y="264.66666666666669" width="375" height="299.00000000000006"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-RN-sLo">
+                                <rect key="frame" x="0.0" y="264" width="375" height="300"/>
+                                <color key="backgroundColor" name="Heliotrope"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Rce-M0-Ncu"/>
+                                    <constraint firstAttribute="height" constant="300" id="dkT-rG-Jr0"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Heliotrope"/>
                         <constraints>
-                            <constraint firstItem="d1h-RN-sLo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gWu-o9-xzr"/>
-                            <constraint firstItem="d1h-RN-sLo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="klv-As-MHX"/>
+                            <constraint firstItem="d1h-RN-sLo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UXb-HZ-ShZ"/>
+                            <constraint firstItem="d1h-RN-sLo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cRM-sd-NQE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -35,9 +41,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BabyLogo" width="375" height="299"/>
+        <image name="Loader" width="326" height="288"/>
         <namedColor name="Heliotrope">
-            <color red="0.81199997663497925" green="0.41200000047683716" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81176470588235294" green="0.41176470588235292" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

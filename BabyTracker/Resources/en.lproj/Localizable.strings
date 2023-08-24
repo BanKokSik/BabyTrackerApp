@@ -18,6 +18,7 @@
 
 
 // MARK: - Onboarding pages (Screens 2, 2.1, 2.2, 2.3)
+"PageCellIdentifier" = "PageCell";
 "OnbordingLabelPage1" = "Plan the development";
 "OnbordingLabelPage2" = "Save moments";
 "OnbordingLabelPage3" = "Monitor the indicators";
@@ -65,3 +66,17 @@ Design albums
 "SubscriptionForeverLabel" = "Forever";
 "SubscriptionForeverPriceLabel" = "4980 / 2490rub";
 "DescribeSubscriptionForeverTextView" = "Subscription terms: you can purchase the paid version of the application once and forever for 2499 rub instead of 4980 rub";
+
+
+// MARK: - TabBar (Screen 8)
+"TabCellIdentifier" = "TabCell";
+
+
+// MARK: - EventFeed (Screen 9)
+"FeedCellIdentifier" = "FeedCell";
+
+
+// MARK: - Calendar (Screen 10)
+"CalendarCellIdentifier" = "CalendarCell";
+"AddButton" = "Add";
+"TableCellIdentifier" = "TableCell";

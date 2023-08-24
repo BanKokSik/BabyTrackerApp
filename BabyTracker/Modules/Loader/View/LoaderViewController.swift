@@ -46,7 +46,7 @@ class LoaderViewController: UIViewController {
 private extension LoaderViewController {
     var _loaderImageView: UIImageView {
         let result = UIImageView()
-        result.image = UIImage(named: "BabyLogo")
+        result.image = R.image.babyLogo()
         return result
     }
 }

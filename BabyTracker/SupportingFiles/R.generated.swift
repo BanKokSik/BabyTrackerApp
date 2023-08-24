@@ -83,9 +83,16 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 39 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 45 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
+
+      /// en translation: Add
+      ///
+      /// Key: AddButton
+      ///
+      /// Locales: en, ru
+      var addButton: RswiftResources.StringResource { .init(key: "AddButton", tableName: "Localizable", source: source, developmentValue: "Add", comment: nil) }
 
       /// en translation:  Unlimited photos  Vaccinations and medical examinations  Relatives  Development tips  Design albums 
       ///
@@ -128,6 +135,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var birthDatePlaceholder: RswiftResources.StringResource { .init(key: "BirthDatePlaceholder", tableName: "Localizable", source: source, developmentValue: "Date of birth", comment: nil) }
+
+      /// en translation: CalendarCell
+      ///
+      /// Key: CalendarCellIdentifier
+      ///
+      /// Locales: en, ru
+      var calendarCellIdentifier: RswiftResources.StringResource { .init(key: "CalendarCellIdentifier", tableName: "Localizable", source: source, developmentValue: "CalendarCell", comment: nil) }
 
       /// en translation: Cancel deletion
       ///
@@ -177,6 +191,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var enterTheCodeButton: RswiftResources.StringResource { .init(key: "EnterTheCodeButton", tableName: "Localizable", source: source, developmentValue: "Enter the code", comment: nil) }
+
+      /// en translation: FeedCell
+      ///
+      /// Key: FeedCellIdentifier
+      ///
+      /// Locales: en, ru
+      var feedCellIdentifier: RswiftResources.StringResource { .init(key: "FeedCellIdentifier", tableName: "Localizable", source: source, developmentValue: "FeedCell", comment: nil) }
 
       /// en translation: Boy
       ///
@@ -254,6 +275,13 @@ struct _R {
       ///
       /// Locales: en, ru
       var onbordingLabelPage4: RswiftResources.StringResource { .init(key: "OnbordingLabelPage4", tableName: "Localizable", source: source, developmentValue: "Get recommendations", comment: nil) }
+
+      /// en translation: PageCell
+      ///
+      /// Key: PageCellIdentifier
+      ///
+      /// Locales: en, ru
+      var pageCellIdentifier: RswiftResources.StringResource { .init(key: "PageCellIdentifier", tableName: "Localizable", source: source, developmentValue: "PageCell", comment: nil) }
 
       /// en translation: Popular
       ///
@@ -338,6 +366,20 @@ struct _R {
       ///
       /// Locales: en, ru
       var subscriptionForeverPriceLabel: RswiftResources.StringResource { .init(key: "SubscriptionForeverPriceLabel", tableName: "Localizable", source: source, developmentValue: "4980 / 2490rub", comment: nil) }
+
+      /// en translation: TabCell
+      ///
+      /// Key: TabCellIdentifier
+      ///
+      /// Locales: en, ru
+      var tabCellIdentifier: RswiftResources.StringResource { .init(key: "TabCellIdentifier", tableName: "Localizable", source: source, developmentValue: "TabCell", comment: nil) }
+
+      /// en translation: TableCell
+      ///
+      /// Key: TableCellIdentifier
+      ///
+      /// Locales: en, ru
+      var tableCellIdentifier: RswiftResources.StringResource { .init(key: "TableCellIdentifier", tableName: "Localizable", source: source, developmentValue: "TableCell", comment: nil) }
 
       /// en translation: Terms
       ///
@@ -472,7 +514,7 @@ struct _R {
     var yellowOrange: RswiftResources.ColorResource { .init(name: "YellowOrange", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 13 images.
+  /// This `_R.image` struct is generated, and contains static references to 25 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -497,6 +539,9 @@ struct _R {
     /// Image `Girl`.
     var girl: RswiftResources.ImageResource { .init(name: "Girl", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `Loader`.
+    var loader: RswiftResources.ImageResource { .init(name: "Loader", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `OnBoardingPage1`.
     var onBoardingPage1: RswiftResources.ImageResource { .init(name: "OnBoardingPage1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -509,11 +554,44 @@ struct _R {
     /// Image `OnBoardingPage4`.
     var onBoardingPage4: RswiftResources.ImageResource { .init(name: "OnBoardingPage4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `PhotoImage`.
-    var photoImage: RswiftResources.ImageResource { .init(name: "PhotoImage", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `baby`.
+    var baby: RswiftResources.ImageResource { .init(name: "baby", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `bulb`.
+    var bulb: RswiftResources.ImageResource { .init(name: "bulb", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `calendar`.
+    var calendar: RswiftResources.ImageResource { .init(name: "calendar", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `doctorIcon`.
+    var doctorIcon: RswiftResources.ImageResource { .init(name: "doctorIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `icons`.
     var icons: RswiftResources.ImageResource { .init(name: "icons", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `infoIcon`.
+    var infoIcon: RswiftResources.ImageResource { .init(name: "infoIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `ruler`.
+    var ruler: RswiftResources.ImageResource { .init(name: "ruler", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `rulerIcon`.
+    var rulerIcon: RswiftResources.ImageResource { .init(name: "rulerIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `scales`.
+    var scales: RswiftResources.ImageResource { .init(name: "scales", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `scalesIcon`.
+    var scalesIcon: RswiftResources.ImageResource { .init(name: "scalesIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `star`.
+    var star: RswiftResources.ImageResource { .init(name: "star", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `starIcon`.
+    var starIcon: RswiftResources.ImageResource { .init(name: "starIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `vaccinationIcon`.
+    var vaccinationIcon: RswiftResources.ImageResource { .init(name: "vaccinationIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -634,7 +712,7 @@ struct _R {
 
       let name = "LaunchScreen"
       func validate() throws {
-        if UIKit.UIImage(named: "BabyLogo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'BabyLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Loader", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'Loader' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if UIKit.UIColor(named: "Heliotrope", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Heliotrope' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
     }

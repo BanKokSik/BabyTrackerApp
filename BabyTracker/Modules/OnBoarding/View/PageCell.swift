@@ -9,7 +9,7 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "PageCell"
+    static let reuseIdentifier = R.string.localizable.pageCellIdentifier()
     
     private lazy var imageView: UIImageView = _imageView
     private lazy var textLabel: UILabel = _textLabel
