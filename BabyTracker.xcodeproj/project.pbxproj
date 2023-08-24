@@ -1006,7 +1006,6 @@
 				906160A72A6E83BF00715C64 /* SubscriptionModel.swift in Sources */,
 				906380272A8CA020004E1EB1 /* BabySettingsCoordinator.swift in Sources */,
 				90CDD7A32A5DDFFE00945581 /* BaseButton.swift in Sources */,
-
 				90782C5F2A7C12E900F52FA2 /* CustomTabBarPresenter.swift in Sources */,
 				906380202A8C9FE2004E1EB1 /* AdvicesPageCoordinator.swift in Sources */,
 				4B504A412A7D077800011300 /* UserRouter.swift in Sources */,
@@ -1020,10 +1019,8 @@
 				4B504A3E2A7BF71A00011300 /* UserModel.swift in Sources */,
 				906160972A69243000715C64 /* SubscriptionCoordinator.swift in Sources */,
 				908887102A4A09E400B8F04C /* PageCell.swift in Sources */,
-
 				9063801B2A8C9F9B004E1EB1 /* HeightPageViewController.swift in Sources */,
 				4B504A432A7D078400011300 /* UserApiProvider.swift in Sources */,
-
 				9007E62A2A51996100A9E144 /* PageItems.swift in Sources */,
 				4B504A292A7BD24F00011300 /* ApiComponents.swift in Sources */,
 				4B504A472A7D2F3500011300 /* Encodable+Extension.swift in Sources */,
@@ -1059,28 +1056,22 @@
 				906380192A8C9F5F004E1EB1 /* WeightPageViewController.swift in Sources */,
 				90E9551E2A58120E003D2109 /* PagePresenter.swift in Sources */,
 				9061609E2A6AB7A700715C64 /* PopupCoordinator.swift in Sources */,
-
 				90782C552A7C015900F52FA2 /* CustomTabBarCoordinator.swift in Sources */,
 				9063802D2A8D4905004E1EB1 /* EventFeedPresenter.swift in Sources */,
 				906380072A8B8F7C004E1EB1 /* CalendarCoordinator.swift in Sources */,
 				90782C572A7C01AC00F52FA2 /* CustomTabBarController.swift in Sources */,
 				9063802B2A8D1399004E1EB1 /* CalendarPresenter.swift in Sources */,
-
 				4B504A3B2A7BF48C00011300 /* ApiError.swift in Sources */,
 				4B504A2D2A7BD2F000011300 /* ApiRouter.swift in Sources */,
-
 				906160A02A6D8D9700715C64 /* CustomSwitch.swift in Sources */,
 				90E2CBBB2A45B4CF00B116BE /* SceneDelegate.swift in Sources */,
 				808C0B492A45D51000AEC365 /* Extension.swift in Sources */,
 				90EE92472A49BC51003D4471 /* R.generated.swift in Sources */,
-
 				906380222A8C9FF3004E1EB1 /* AdvicesPageViewController.swift in Sources */,
 				90782C672A7CED2E00F52FA2 /* CustomCalendarCell.swift in Sources */,
 				906380122A8C9F0A004E1EB1 /* HeightPageCoordinator.swift in Sources */,
-
 				4B504A362A7BE09700011300 /* AuthProvider.swift in Sources */,
 				4B504A382A7BE8A300011300 /* RegisterRouter.swift in Sources */,
-
 				4B7D69CF2A65690800EF3F75 /* CreateProfileCoordinator.swift in Sources */,
 				9063802F2A8D56CF004E1EB1 /* EventFeedModel.swift in Sources */,
 				904203372A8261E400E9DB64 /* EventModel.swift in Sources */,
@@ -1244,8 +1235,9 @@
 				INFOPLIST_FILE = BabyTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1254,9 +1246,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.BabyTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1273,8 +1268,9 @@
 				INFOPLIST_FILE = BabyTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1283,9 +1279,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.BabyTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

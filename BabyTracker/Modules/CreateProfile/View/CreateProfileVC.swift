@@ -212,7 +212,7 @@ class CreateProfileVC: BaseViewController, CreateProfileView {
     
     @objc func nextButtonDidTap() {
         presenter?.createUserProfile()
-        //createProfileCoordinator?.didFinish()
+        createProfileCoordinator?.didFinish()
     }
     
     @objc func switcherValueChanged(_ sender: CustomSwitch) {}

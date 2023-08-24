@@ -32,6 +32,7 @@ final class AppCoordinator: NSObject, Coordinator {
          windowScene: UIWindowScene) {
         self.navController = navController
         self.window = UIWindow(windowScene: windowScene)
+        self.window.overrideUserInterfaceStyle = .light
     }
     
     func start() {
