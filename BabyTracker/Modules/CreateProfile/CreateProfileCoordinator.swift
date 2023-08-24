@@ -21,14 +21,21 @@ final class CreateProfileCoordinator: Coordinator {
     
     private let navController: UINavigationController
     private var viewController: UIViewController?
+    private let userProvider: UserApiProvider
     
-    init(navController: UINavigationController, parent: Coordinator? = nil) {
+    init(navController: UINavigationController,
+         parent: Coordinator? = nil,
+         userProvider: UserApiProvider) {
         self.navController = navController
         self.parent = parent
+        self.userProvider = userProvider
     }
     
     func start() {
         let viewController = CreateProfileVC()
+        let presenter = CreateProfilePresenterImpl(view: viewController,
+                                                   userProvider: userProvider)
+        viewController.presenter = presenter
         viewController.coordinator = self
         self.viewController = viewController
     }

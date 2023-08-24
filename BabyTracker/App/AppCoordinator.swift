@@ -16,12 +16,17 @@ final class AppCoordinator: NSObject, Coordinator {
     private let window: UIWindow
     
     private var onboardingCoordinator: OnboardingCoordinator?
-    
     private var loaderCoordinator: LoaderCoordinator?
     private var registrationCoordinator: RegistrationCoordinator?
     private var createProfileCoordinator: CreateProfileCoordinator?
     private var subscriptionCoordinator: SubscriptionCoordinator?
     private var tabBarCoordinator: CustomTabBarCoordinator?
+    
+    private var authProvider: AuthProvider?
+    private var apiSessionProvider: ApiSessionProvider?
+    private var config: Config?
+    private var registerApiProvider: RegisterApiProvider?
+    private var userApiProvider: UserApiProvider?
     
     init(navController: CustomNavigationController = CustomNavigationController(),
          windowScene: UIWindowScene) {
@@ -30,6 +35,9 @@ final class AppCoordinator: NSObject, Coordinator {
     }
     
     func start() {
+        startNetworkService()
+        startRegisterApiService()
+        startUserApiService()
         let loaderCoordinator = LoaderCoordinator(navController: navController, parent: self)
         loaderCoordinator.start()
         self.loaderCoordinator = loaderCoordinator
@@ -48,6 +56,40 @@ final class AppCoordinator: NSObject, Coordinator {
         return UIViewController()
     }
     
+    //MARK: - App Assembling methods
+    
+    private func startNetworkService() {
+        let authProvider: AuthProvider = AuthProviderImpl()
+        let apiSessionProvider: ApiSessionProvider = ApiSessionProviderImpl(authProvider: authProvider)
+        let config: Config = DefaultConfig()
+        self.authProvider = authProvider
+        self.apiSessionProvider = apiSessionProvider
+        self.config = config
+    }
+    
+    private func startRegisterApiService() {
+        guard let config = config,
+              let authProvider = authProvider,
+              let sessionProvider = apiSessionProvider else {
+            return
+        }
+        let router: RegisterRouter = RegisterRouterImpl(config: config)
+        let apiProvider: RegisterApiProvider = RegisterApiProviderImpl(router: router, authProvider: authProvider, apiSessionProvider: sessionProvider)
+        self.registerApiProvider = apiProvider
+    }
+    
+    private func startUserApiService() {
+        guard let config = config,
+              let sessionProvider = apiSessionProvider else {
+            return
+        }
+        let router: UserRouter = UserRouterImpl(config: config)
+        let apiProvider: UserApiProvider = UserApiProviderImpl(userRouter: router, apiSessionProvider: sessionProvider)
+        self.userApiProvider = apiProvider
+    }
+    
+    //MARK: - App Navigation methods
+    
     private func removeAllSubmodules() {
         onboardingCoordinator = nil
         registrationCoordinator = nil
@@ -57,7 +99,8 @@ final class AppCoordinator: NSObject, Coordinator {
     }
     
     private func installOnbordingCoordinator(){
-        let onboardingCoordinator = OnboardingCoordinator(navController: navController, parent: self)
+        let onboardingCoordinator = OnboardingCoordinator(navController: navController,                                                        parent: self,
+                                                          registerProvider: registerApiProvider!)
         onboardingCoordinator.start()
         onboardingCoordinator.delegate = self
         self.onboardingCoordinator = onboardingCoordinator
@@ -79,7 +122,9 @@ final class AppCoordinator: NSObject, Coordinator {
     }
     
     private func installCreateProfileCoordinator() {
-        let createProfileCoordinator = CreateProfileCoordinator(navController: navController, parent: self)
+        let createProfileCoordinator = CreateProfileCoordinator(navController: navController,
+                                                                parent: self,
+                                                                userProvider: userApiProvider!)
         createProfileCoordinator.start()
         createProfileCoordinator.delegate = self
         self.createProfileCoordinator = createProfileCoordinator

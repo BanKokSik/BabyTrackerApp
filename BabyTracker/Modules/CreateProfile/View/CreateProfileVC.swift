@@ -8,10 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol CreateProfileView: AnyObject {
+    var presenter: CreateProfilePresenter? { get set }
+    var coordinator: Coordinator? { get set }
+}
 
-protocol CreateProfileVCDelegate: AnyObject {}
-
-class CreateProfileVC: BaseViewController {
+class CreateProfileVC: BaseViewController, CreateProfileView {
+    
+    var presenter: CreateProfilePresenter?
     
     weak var coordinator: Coordinator?
     private var createProfileCoordinator: CreateProfileCoordinator? { coordinator as? CreateProfileCoordinator }
@@ -41,7 +45,6 @@ class CreateProfileVC: BaseViewController {
     var blurView: UIVisualEffectView?
     
     var activeGender: Gender?
-    weak var delegate: CreateProfileVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,8 +189,12 @@ class CreateProfileVC: BaseViewController {
     }
     
     func setValueToGenderTextField(value: String, gender: Gender?) {
+        guard let gender = gender else {
+            return
+        }
         genderTextField.text = value
         activeGender = gender
+        presenter?.setChild(gender: gender)
     }
     
     @objc func imageTapped(tapRecognizer: UITapGestureRecognizer){
@@ -196,6 +203,7 @@ class CreateProfileVC: BaseViewController {
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         birthDateTextField.text = birthDateFormatter.string(from: sender.date)
+        presenter?.setChild(birthday: sender.date)
     }
     
     @objc func doneButtonTapped() {
@@ -203,7 +211,8 @@ class CreateProfileVC: BaseViewController {
     }
     
     @objc func nextButtonDidTap() {
-        createProfileCoordinator?.didFinish()
+        presenter?.createUserProfile()
+        //createProfileCoordinator?.didFinish()
     }
     
     @objc func switcherValueChanged(_ sender: CustomSwitch) {}
@@ -314,6 +323,10 @@ extension CreateProfileVC: UITextFieldDelegate {
         switch textField.tag {
         case 1:
             makeBorderActive(nameBorder, isActive: false)
+            guard let name = textField.text else {
+                return
+            }
+            presenter?.setChild(name: name)
         case 2:
             makeBorderActive(genderBorder, isActive: false)
         case 3:

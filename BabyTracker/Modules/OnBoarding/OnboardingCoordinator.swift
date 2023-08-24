@@ -16,18 +16,25 @@ final class OnboardingCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     weak var delegate: OnboardingCoordinatorDelegate?
     
+    private let registerProvider: RegisterApiProvider
     private let navController: UINavigationController
     private var viewController: UIViewController?
     
-    init(navController: UINavigationController, parent: Coordinator? = nil) {
+    init(navController: UINavigationController,
+         parent: Coordinator? = nil,
+         registerProvider: RegisterApiProvider) {
         self.navController = navController
         self.parent = parent
+        self.registerProvider = registerProvider
     }
     
     func start() {
         let viewController = PageViewController()
+        let presenter = PagePresenter(view: viewController,
+                                      registerProvider: registerProvider)
+        viewController.presenter = presenter
         viewController.coordinator = self
-        self.viewController = viewController
+        self.viewController = viewController 
     }
     
     func entry() -> UIViewController {
